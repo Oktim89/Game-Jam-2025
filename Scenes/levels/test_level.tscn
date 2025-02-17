@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dp271oj632wr6" path="res://kitchen assets/Island/Island1.png" id="10_l07wp"]
 [ext_resource type="PackedScene" uid="uid://b0ts5nqfbmnpd" path="res://Scenes/Entities/Player/player.tscn" id="11_mrlxm"]
 [ext_resource type="PackedScene" uid="uid://dr25crfewmrha" path="res://Scenes/Entities/customers/customer-with-path.tscn" id="13_5sq12"]
-[ext_resource type="PackedScene" uid="uid://btpikvufpjjeo" path="res://Scenes/test.tscn" id="14_cuc0h"]
+[ext_resource type="PackedScene" uid="uid://dt4tjd0cxr7yq" path="res://Scenes/Entities/customers/spawner.tscn" id="14_5p8vh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yllge"]
 texture = ExtResource("1_lygg2")
@@ -77,7 +77,7 @@ sources/7 = SubResource("TileSetAtlasSource_kb2k8")
 sources/8 = SubResource("TileSetAtlasSource_fwcu1")
 sources/9 = SubResource("TileSetAtlasSource_bl40p")
 
-[node name="Main" type="Node2D"]
+[node name="Main2" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(0, 52)
@@ -86,9 +86,11 @@ tile_set = SubResource("TileSet_tvb6f")
 
 [node name="Player" parent="." instance=ExtResource("11_mrlxm")]
 position = Vector2(175, 112)
-
-[node name="Node2D" parent="." instance=ExtResource("14_cuc0h")]
-position = Vector2(477, 115)
+script = null
 
 [node name="Path2D" parent="." instance=ExtResource("13_5sq12")]
 position = Vector2(267, 118)
+
+[node name="Spawner" parent="Path2D/PathFollow2D" index="0" instance=ExtResource("14_5p8vh")]
+
+[editable path="Path2D"]

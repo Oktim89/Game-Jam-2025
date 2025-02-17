@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://clu8n42om36en"]
+[gd_scene load_steps=9 format=4 uid="uid://clu8n42om36en"]
 
-[ext_resource type="Texture2D" uid="uid://bcyhbr7ccexwr" path="res://starting.png" id="1_36v1p"]
+[ext_resource type="Texture2D" path="res://starting.png" id="1_36v1p"]
 [ext_resource type="PackedScene" uid="uid://b0ts5nqfbmnpd" path="res://Scenes/Entities/Player/player.tscn" id="2_8efqn"]
+[ext_resource type="Script" path="res://Scenes/Entities/Player/player.gd" id="3_4bw5d"]
 [ext_resource type="Script" path="res://transition_area.gd" id="4_u1xgb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3uymg"]
@@ -54,6 +55,7 @@ tile_set = SubResource("TileSet_4hf5d")
 
 [node name="Player" parent="." instance=ExtResource("2_8efqn")]
 position = Vector2(471, 168)
+script = ExtResource("3_4bw5d")
 
 [node name="Customer Camera" type="Camera2D" parent="." groups=["Cameras"]]
 anchor_mode = 0

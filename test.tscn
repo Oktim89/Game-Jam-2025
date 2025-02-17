@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwlg1amw4atfq"]
+
+[ext_resource type="Texture2D" uid="uid://c8u0458iitkp8" path="res://icon.svg" id="1_grxyb"]
+[ext_resource type="Script" path="res://test.gd" id="1_v43sk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0w2f"]
+size = Vector2(172, 167)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cv67f"]
+size = Vector2(128, 127)
+
+[node name="Node2D" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_v43sk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_grxyb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -4.5)
+shape = SubResource("RectangleShape2D_h0w2f")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-2, 0.5)
+shape = SubResource("RectangleShape2D_cv67f")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]

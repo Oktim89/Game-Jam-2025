@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr2mp7so08uib"]
+
+[sub_resource type="Environment" id="1"]
+background_mode = 4
+tonemap_mode = 4
+
+[node name="2DExample" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(238, 202)
+scale = Vector2(0.77551, 0.77551)
+
+[node name="Icon3" type="Sprite2D" parent="."]
+modulate = Color(0.941176, 0, 0, 1)
+position = Vector2(490, 234)
+scale = Vector2(0.877551, 0.877551)
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(1630, 749)
+
+[node name="Icon5" type="Sprite2D" parent="."]
+modulate = Color(0.909804, 0, 1, 1)
+position = Vector2(1419, 877)
+scale = Vector2(0.688776, 0.688776)
+
+[node name="Icon4" type="Sprite2D" parent="."]
+modulate = Color(0.278431, 1, 0.141176, 1)
+position = Vector2(1812, 929)
+scale = Vector2(0.653061, 0.653061)
+
+[node name="Camera2D1" type="Camera2D" parent="."]
+position = Vector2(314, 228)
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(1648, 814)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("1")

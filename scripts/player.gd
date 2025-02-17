@@ -1,6 +1,7 @@
 extends CharacterBody2D
 #reeferences to the animated sprite
 @onready var anim =$Sprite
+
 #brings the animation of the sprite into this script
 @export var speed : float = 50.0 # sets how fast our character moves
 @export var sprint_speed : float = 100.0
@@ -11,6 +12,8 @@ var dir : String = "none"
 var last_direction:Vector2
 
 
+
+	
 func _process(delta):
 	if Input.is_action_pressed("sprint"): #make sprinting mechanic
 		speed = sprint_speed
@@ -52,6 +55,7 @@ func _process(delta):
 			anim.play("walking_up")
 		elif dir == "down":
 			anim.play("walking_down")
+
 	
 	
 	if velocity == Vector2.ZERO and last_direction:
@@ -63,3 +67,5 @@ func _process(delta):
 			anim.play("idle_right")
 		elif last_direction == Vector2.LEFT:
 			anim.play("idle_left")
+
+	

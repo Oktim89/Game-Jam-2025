@@ -17,7 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-InteractionManager="*res://interaction/InteractionManager.tscn"
+Globals="*res://Globals/globals.gd"
+GlobalDough="*res://Globals/global_dough.tscn"
 
 [display]
 

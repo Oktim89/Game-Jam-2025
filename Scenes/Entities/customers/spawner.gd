@@ -15,7 +15,7 @@ func _on_timer_timeout() -> void:
 	else:
 		var selected_scene_index = 0
 		var temp = scenes[selected_scene_index].instantiate()
-		add_child(temp,true)
+		add_sibling(temp,true)
 		count+=1
 		
 	

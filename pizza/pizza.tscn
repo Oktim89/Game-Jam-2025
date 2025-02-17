@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsu3h4cfo3uj"]
+
+[ext_resource type="Script" path="res://pizza/pizza.gd" id="1_myup0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nplgt"]
+size = Vector2(84, 57)
+
+[node name="pizza" type="Area2D"]
+script = ExtResource("1_myup0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 13.5)
+shape = SubResource("RectangleShape2D_nplgt")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.479
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

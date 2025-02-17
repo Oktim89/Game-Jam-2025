@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://3vpgeykfxna2"]
+[gd_scene load_steps=13 format=3 uid="uid://3vpgeykfxna2"]
 
 [ext_resource type="Script" path="res://Scenes/Entities/customers/customer_class.gd" id="1_je7ha"]
 [ext_resource type="Texture2D" uid="uid://ms5qwogsswlx" path="res://16x16/Char_001_Idle.png" id="1_mtvwx"]
@@ -128,7 +128,11 @@ _data = {
 "walk_up": SubResource("Animation_3uymn")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_24tsf"]
+radius = 20.0998
+
 [node name="Customer" type="CharacterBody2D" groups=["Customers"]]
+scale = Vector2(2, 2)
 script = ExtResource("1_je7ha")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -151,3 +155,10 @@ libraries = {
 texture = ExtResource("2_thggq")
 hframes = 4
 vframes = 4
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_24tsf")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4fckrnpxrl75"
-path="res://.godot/imported/Chair2.PNG-d25cf9beb86ce176778890d5d2aead3e.ctex"
+path="res://.godot/imported/Chair2.PNG-305914eebf66f0035f66fba046dd28f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://kitchen assets/Chair/Chair2.PNG"
-dest_files=["res://.godot/imported/Chair2.PNG-d25cf9beb86ce176778890d5d2aead3e.ctex"]
+source_file="res://kitchen assets/Fireplace/Chair2.PNG"
+dest_files=["res://.godot/imported/Chair2.PNG-305914eebf66f0035f66fba046dd28f8.ctex"]
 
 [params]
 

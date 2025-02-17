@@ -9,6 +9,8 @@ const current_speed : float = 50.0
 var is_moving : bool = false #tells if the character is moving or not
 var dir : String = "none" #string that will help us with animation
 var last_direction:Vector2
+var scene_switch : int = 512
+
 
 func _process(delta):
 	if Input.is_action_pressed("sprint"): #make sprinting mechanic
@@ -62,3 +64,9 @@ func _process(delta):
 			anim.play("idle_right")
 		elif last_direction == Vector2.LEFT:
 			anim.play("idle_left")
+
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://kitchen.tscn")
+	

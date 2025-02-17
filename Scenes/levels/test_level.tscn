@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://c1d2vr2yj52a"]
+[gd_scene load_steps=27 format=4 uid="uid://c1d2vr2yj52a"]
 
 [ext_resource type="Texture2D" uid="uid://bgfcfl6vobvjc" path="res://Wall and Floor/Floor.png" id="1_lygg2"]
 [ext_resource type="Texture2D" uid="uid://b1au0kd6cyf7b" path="res://Wall and Floor/wall.png" id="2_nrxm1"]
@@ -12,7 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://dp271oj632wr6" path="res://kitchen assets/Island/Island1.png" id="10_l07wp"]
 [ext_resource type="PackedScene" uid="uid://b0ts5nqfbmnpd" path="res://Scenes/Entities/Player/player.tscn" id="11_mrlxm"]
 [ext_resource type="PackedScene" uid="uid://dr25crfewmrha" path="res://Scenes/Entities/customers/customer-with-path.tscn" id="13_5sq12"]
+[ext_resource type="PackedScene" uid="uid://dt4tjd0cxr7yq" path="res://Scenes/Entities/customers/spawner.tscn" id="14_5p8vh"]
 [ext_resource type="PackedScene" uid="uid://btpikvufpjjeo" path="res://test.tscn" id="14_cuc0h"]
+[ext_resource type="PackedScene" uid="uid://3vpgeykfxna2" path="res://Scenes/Entities/customers/customer_class.tscn" id="15_3omyr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yllge"]
 texture = ExtResource("1_lygg2")
@@ -92,3 +94,10 @@ position = Vector2(477, 115)
 
 [node name="Path2D" parent="." instance=ExtResource("13_5sq12")]
 position = Vector2(267, 118)
+
+[node name="Spawner" parent="Path2D/PathFollow2D" index="0" instance=ExtResource("14_5p8vh")]
+position = Vector2(-15.0109, 0.819221)
+rotation = 0.0120476
+scenes = Array[PackedScene]([ExtResource("15_3omyr")])
+
+[editable path="Path2D"]

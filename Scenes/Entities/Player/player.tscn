@@ -275,7 +275,7 @@ animations = [{
 radius = 9.0
 height = 38.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_juq15")
 speed = 40.0
 

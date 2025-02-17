@@ -1,6 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dr25crfewmrha"]
-
-[ext_resource type="PackedScene" uid="uid://3vpgeykfxna2" path="res://Scenes/Entities/customers/customer_class.tscn" id="1_avj3c"]
+[gd_scene load_steps=2 format=3 uid="uid://dr25crfewmrha"]
 
 [sub_resource type="Curve2D" id="Curve2D_gsgtf"]
 _data = {
@@ -15,5 +13,3 @@ curve = SubResource("Curve2D_gsgtf")
 position = Vector2(15, -1)
 rotation = -0.0120476
 rotates = false
-
-[node name="Customer" parent="PathFollow2D" instance=ExtResource("1_avj3c")]

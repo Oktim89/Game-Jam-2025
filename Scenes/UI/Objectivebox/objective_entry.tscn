@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c4n3tlo74tov3"]
+
+[node name="ObjectiveEntry" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="TextureRect"]
+
+[node name="RichtextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+text = "This id for the strike through"
+
+[node name="MarginContainer" type="MarginContainer" parent="RichtextLabel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="RichtextLabel/MarginContainer"]
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../RichtextLabel")

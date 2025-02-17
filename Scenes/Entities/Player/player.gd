@@ -2,14 +2,21 @@ extends CharacterBody2D
 #reeferences to the animated sprite
 @onready var anim =$Sprite
 #brings the animation of the sprite into this script
-@export var speed : float = 20.0 # sets how fast our character moves
+@export var speed : float = 50.0 # sets how fast our character moves
+@export var sprint_speed : float = 100.0
 
+const current_speed : float = 50.0
 var is_moving : bool = false #tells if the character is moving or not
 var dir : String = "none" #string that will help us with animation
 var last_direction:Vector2
 
 func _process(delta):
-	
+	if Input.is_action_pressed("sprint"): #make sprinting mechanic
+		speed = sprint_speed
+	elif Input.is_action_just_released("sprint"):
+		speed = current_speed
+			
+		
 	if Input.is_action_pressed("up"): #all of these control the movement 
 		velocity = Vector2.UP * speed
 		is_moving = true

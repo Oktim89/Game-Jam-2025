@@ -289,7 +289,3 @@ frame_progress = 0.725892
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_y3u7n")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-1, 0)
-zoom = Vector2(3, 3)

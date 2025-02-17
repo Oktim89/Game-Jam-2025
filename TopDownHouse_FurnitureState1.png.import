@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dai7pyqep1boa"
-path="res://.godot/imported/TopDownHouse_FloorsAndWalls.png-8f9bf269ad7ab89e91007814b4c72b2e.ctex"
+uid="uid://cllavhrdqwnnd"
+path="res://.godot/imported/TopDownHouse_FurnitureState1.png-748723a91a9cc7d9eb3e5c418f0ae63f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TopDownHouse_FloorsAndWalls.png"
-dest_files=["res://.godot/imported/TopDownHouse_FloorsAndWalls.png-8f9bf269ad7ab89e91007814b4c72b2e.ctex"]
+source_file="res://TopDownHouse_FurnitureState1.png"
+dest_files=["res://.godot/imported/TopDownHouse_FurnitureState1.png-748723a91a9cc7d9eb3e5c418f0ae63f.ctex"]
 
 [params]
 

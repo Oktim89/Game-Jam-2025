@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://clu8n42om36en"]
 
-[ext_resource type="Texture2D" uid="uid://dai7pyqep1boa" path="res://TopDownHouse_FloorsAndWalls.png" id="1_2tlq3"]
+[ext_resource type="Texture2D" uid="uid://dai7pyqep1boa" path="res://Wall and Floor/TopDownHouse_FloorsAndWalls.png" id="1_2tlq3"]
 [ext_resource type="Texture2D" uid="uid://bcyhbr7ccexwr" path="res://kitchen assets/starting.png" id="1_vnqig"]
 [ext_resource type="PackedScene" uid="uid://b0ts5nqfbmnpd" path="res://Scenes/Entities/Player/player.tscn" id="2_lchm3"]
 [ext_resource type="Script" path="res://scripts/transition_area.gd" id="3_uesyp"]
@@ -222,7 +222,7 @@ tile_map_data = PackedByteArray("AAAAAP3/CgABAAAAAAAAAP7/CgABAAEAAAAAAP//CgABAAI
 tile_set = SubResource("TileSet_4hf5d")
 
 [node name="Player" parent="." instance=ExtResource("2_lchm3")]
-position = Vector2(412, 175)
+position = Vector2(412, 153)
 
 [node name="Customer Camera" type="Camera2D" parent="." groups=["Cameras"]]
 anchor_mode = 0

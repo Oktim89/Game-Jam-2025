@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://c1d2vr2yj52a"]
+[gd_scene load_steps=25 format=4 uid="uid://c1d2vr2yj52a"]
 
 [ext_resource type="Texture2D" uid="uid://bgfcfl6vobvjc" path="res://Wall and Floor/Floor.png" id="1_lygg2"]
 [ext_resource type="Texture2D" uid="uid://b1au0kd6cyf7b" path="res://Wall and Floor/wall.png" id="2_nrxm1"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://cqn4bdvd8svwr" path="res://kitchen assets/Refrigerator/Refrigerator1.png" id="9_unmcn"]
 [ext_resource type="Texture2D" uid="uid://dp271oj632wr6" path="res://kitchen assets/Island/Island1.png" id="10_l07wp"]
 [ext_resource type="PackedScene" uid="uid://b0ts5nqfbmnpd" path="res://Scenes/Entities/Player/player.tscn" id="11_mrlxm"]
+[ext_resource type="PackedScene" uid="uid://3vpgeykfxna2" path="res://Scenes/Entities/customers/customer_class.tscn" id="13_o5qpd"]
+[ext_resource type="PackedScene" uid="uid://btpikvufpjjeo" path="res://test.tscn" id="14_cuc0h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_myfe7"]
 texture = ExtResource("1_lygg2")
@@ -84,3 +86,11 @@ tile_set = SubResource("TileSet_tvb6f")
 
 [node name="Player" parent="." instance=ExtResource("11_mrlxm")]
 position = Vector2(175, 112)
+
+[node name="Node2D" parent="." instance=ExtResource("14_cuc0h")]
+position = Vector2(477, 115)
+
+[node name="Customer" parent="." instance=ExtResource("13_o5qpd")]
+position = Vector2(262, 116)
+
+[editable path="Customer"]

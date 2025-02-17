@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://clu8n42om36en"]
+[gd_scene load_steps=11 format=4 uid="uid://clu8n42om36en"]
 
 [ext_resource type="Texture2D" uid="uid://dai7pyqep1boa" path="res://TopDownHouse_FloorsAndWalls.png" id="1_2tlq3"]
 [ext_resource type="Texture2D" uid="uid://bcyhbr7ccexwr" path="res://kitchen assets/starting.png" id="1_vnqig"]
 [ext_resource type="PackedScene" uid="uid://b0ts5nqfbmnpd" path="res://Scenes/Entities/Player/player.tscn" id="2_lchm3"]
 [ext_resource type="Script" path="res://scripts/transition_area.gd" id="3_uesyp"]
+[ext_resource type="PackedScene" uid="uid://bsu3h4cfo3uj" path="res://pizza/pizza.tscn" id="5_bsl15"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rid0n"]
 texture = ExtResource("1_2tlq3")
@@ -244,6 +245,9 @@ script = ExtResource("3_uesyp")
 position = Vector2(521, 150.215)
 scale = Vector2(1.06, 1.06)
 shape = SubResource("RectangleShape2D_3etly")
+
+[node name="pizza" parent="." instance=ExtResource("5_bsl15")]
+position = Vector2(595, 70)
 
 [connection signal="body_entered" from="transition_area2" to="transition_area2" method="_on_body_entered"]
 [connection signal="body_exited" from="transition_area2" to="transition_area2" method="_on_body_exited"]

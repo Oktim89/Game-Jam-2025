@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cqn4bdvd8svwr" path="res://kitchen assets/Refrigerator/Refrigerator1.png" id="9_unmcn"]
 [ext_resource type="Texture2D" uid="uid://dp271oj632wr6" path="res://kitchen assets/Island/Island1.png" id="10_l07wp"]
 [ext_resource type="PackedScene" uid="uid://b0ts5nqfbmnpd" path="res://Scenes/Entities/Player/player.tscn" id="11_mrlxm"]
-[ext_resource type="PackedScene" uid="uid://3vpgeykfxna2" path="res://Scenes/Entities/customers/customer_class.tscn" id="13_o5qpd"]
+[ext_resource type="PackedScene" uid="uid://dr25crfewmrha" path="res://Scenes/Entities/customers/customer-with-path.tscn" id="13_5sq12"]
 [ext_resource type="PackedScene" uid="uid://btpikvufpjjeo" path="res://test.tscn" id="14_cuc0h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yllge"]
@@ -90,7 +90,5 @@ position = Vector2(175, 112)
 [node name="Node2D" parent="." instance=ExtResource("14_cuc0h")]
 position = Vector2(477, 115)
 
-[node name="Customer" parent="." instance=ExtResource("13_o5qpd")]
-position = Vector2(262, 116)
-
-[editable path="Customer"]
+[node name="Path2D" parent="." instance=ExtResource("13_5sq12")]
+position = Vector2(267, 118)

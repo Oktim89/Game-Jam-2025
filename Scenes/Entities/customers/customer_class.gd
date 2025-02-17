@@ -6,8 +6,8 @@ const JUMP_VELOCITY = -400.0
 @onready var anim =$AnimationPlayer
 @onready var sprite=$Sprite2D
 var current_pos
-@onready var path_2D =$Path2D
-@onready var path_follow=$Path2D/PathFollow2D
+@onready var path_2D =$"../.."
+@onready var path_follow=$".."
 @export var move_speed = 60
 var last_position :Vector2
 
@@ -27,11 +27,14 @@ func _physics_process(delta: float) -> void:
 	
 func update_animation(movement: Vector2)->void:
 	var anim_name:="walk_"
+	print(abs(movement.x))
 	anim_name +=(
 		"right"
 		if abs(movement.x)> abs(movement.y) and movement.x >0
-		else "left" if abs(movement.x) > (movement.y) else "down" if movement.y >0 else"up" 
+		else "left" if abs(movement.x) > (movement.y) else "up" if movement.y <0 else "down" 
 	)
+	if abs(movement.x)==0:
+		anim_name="walk_up"
 	if anim.current_animation!= anim_name:
 		anim.play(anim_name)
 		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://3vpgeykfxna2"]
+[gd_scene load_steps=12 format=3 uid="uid://3vpgeykfxna2"]
 
 [ext_resource type="Script" path="res://Scenes/Entities/customers/customer_class.gd" id="1_je7ha"]
 [ext_resource type="Texture2D" uid="uid://ms5qwogsswlx" path="res://16x16/Char_001_Idle.png" id="1_mtvwx"]
@@ -7,29 +7,6 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lqd5c"]
 radius = 7.0
 height = 22.0
-
-[sub_resource type="Curve2D" id="Curve2D_kym6n"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 9, 3, 0, 0, 0, 0, 121, 1, 0, 0, 0, 0, 123, 34, 0, 0, 0, 0, 8, 36, 0, 0, 0, 0, 9, 3)
-}
-point_count = 5
-
-[sub_resource type="Animation" id="Animation_mk583"]
-resource_name = "idle_down"
-length = 3.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333, 0.633333, 1.23333, 1.86667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
 
 [sub_resource type="Animation" id="Animation_owdxx"]
 length = 0.001
@@ -58,10 +35,25 @@ tracks/1/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_d6sla"]
-resource_name = "walk_right"
-length = 1.5
+[sub_resource type="Animation" id="Animation_mk583"]
+resource_name = "idle_down"
+length = 3.0
 loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.633333, 1.23333, 1.86667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_2endj"]
+resource_name = "walk_down"
 step = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -73,7 +65,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [8, 9, 10, 11]
+"values": [0, 1, 2, 3]
 }
 
 [sub_resource type="Animation" id="Animation_f5jub"]
@@ -92,8 +84,10 @@ tracks/0/keys = {
 "values": [4, 5, 6, 7]
 }
 
-[sub_resource type="Animation" id="Animation_2endj"]
-resource_name = "walk_down"
+[sub_resource type="Animation" id="Animation_d6sla"]
+resource_name = "walk_right"
+length = 1.5
+loop_mode = 1
 step = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -105,7 +99,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3]
+"values": [8, 9, 10, 11]
 }
 
 [sub_resource type="Animation" id="Animation_3uymn"]
@@ -137,22 +131,16 @@ _data = {
 [node name="Customer" type="CharacterBody2D" groups=["Customers"]]
 script = ExtResource("1_je7ha")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("1_mtvwx")
-hframes = 4
-vframes = 4
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_lqd5c")
 
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_kym6n")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(9, 3)
-rotation = -0.0178552
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-2.69737, 0.0481675)
+texture = ExtResource("1_mtvwx")
+hframes = 4
+vframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

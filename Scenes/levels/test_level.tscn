@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dp271oj632wr6" path="res://kitchen assets/Island/Island1.png" id="10_l07wp"]
 [ext_resource type="PackedScene" uid="uid://b0ts5nqfbmnpd" path="res://Scenes/Entities/Player/player.tscn" id="11_mrlxm"]
 [ext_resource type="PackedScene" uid="uid://dr25crfewmrha" path="res://Scenes/Entities/customers/customer-with-path.tscn" id="13_5sq12"]
-[ext_resource type="PackedScene" uid="uid://btpikvufpjjeo" path="res://test.tscn" id="14_cuc0h"]
+[ext_resource type="PackedScene" uid="uid://btpikvufpjjeo" path="res://Scenes/test.tscn" id="14_cuc0h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yllge"]
 texture = ExtResource("1_lygg2")

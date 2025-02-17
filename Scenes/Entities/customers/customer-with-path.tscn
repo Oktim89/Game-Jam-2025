@@ -4,9 +4,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_gsgtf"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 15, -1, 0, 0, 0, 0, 98, -2, 0, 0, 0, 0, 101, 41, 0, 0, 0, 0, 15, 40, 0, 0, 0, 0, 15, -1)
+"points": PackedVector2Array(0, 0, 0, 0, 15, -1, 0, 0, 0, 0, 22, -5, 0, 0, 0, 0, 98, -2, 0, 0, 0, 0, 101, 41, 0, 0, 0, 0, 15, 40, 0, 0, 0, 0, 15, -1)
 }
-point_count = 5
+point_count = 6
 
 [node name="Path2D" type="Path2D"]
 curve = SubResource("Curve2D_gsgtf")

@@ -129,6 +129,7 @@ _data = {
 }
 
 [node name="Customer" type="CharacterBody2D" groups=["Customers"]]
+scale = Vector2(2, 2)
 script = ExtResource("1_je7ha")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

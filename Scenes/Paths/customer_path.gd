@@ -18,7 +18,6 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	print("hello")
 	var temp = scenes[0].instantiate()
 	add_child(temp)
-	timer.wait_time = random.randi_range(3,10)
+	timer.wait_time = random.randi_range(5,10)

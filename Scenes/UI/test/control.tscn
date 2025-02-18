@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://npx6nimvxksk"]
+
+[ext_resource type="Script" path="res://Scenes/UI/test/control.gd" id="1_dc7gw"]
+[ext_resource type="Shader" path="res://Shaders/ribbon_shader.gdshader" id="2_xfopi"]
+[ext_resource type="Texture2D" uid="uid://cbk32p41jsyvh" path="res://Shaders/pixel-art-red-and-gold-stripe-red-tape-icon-for-8bit-game-on-white-background-vector-removebg-preview.png" id="3_f51by"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pr283"]
+shader = ExtResource("2_xfopi")
+shader_parameter/wave_amplitude = 10.0
+shader_parameter/wave_frequency = 5.0
+shader_parameter/wave_speed = 2.0
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_dc7gw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_pr283")
+layout_mode = 0
+offset_left = 185.0
+offset_top = -188.0
+offset_right = 426.0
+offset_bottom = 331.0
+texture = ExtResource("3_f51by")
+
+[connection signal="mouse_entered" from="TextureRect" to="." method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect" to="." method="_on_texture_rect_mouse_exited"]

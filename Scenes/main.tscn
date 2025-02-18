@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=4 uid="uid://clu8n42om36en"]
+[gd_scene load_steps=13 format=4 uid="uid://clu8n42om36en"]
 
 [ext_resource type="Texture2D" uid="uid://dai7pyqep1boa" path="res://Wall and Floor/TopDownHouse_FloorsAndWalls.png" id="1_2tlq3"]
 [ext_resource type="Texture2D" uid="uid://bcyhbr7ccexwr" path="res://kitchen assets/starting.png" id="1_vnqig"]
 [ext_resource type="PackedScene" uid="uid://b0ts5nqfbmnpd" path="res://Scenes/Entities/Player/player.tscn" id="2_lchm3"]
 [ext_resource type="Script" path="res://scripts/transition_area.gd" id="3_uesyp"]
 [ext_resource type="PackedScene" uid="uid://da3lcf382gsws" path="res://Scenes/Kitchen/dough/dough_producer.tscn" id="5_6ykmx"]
+[ext_resource type="PackedScene" uid="uid://dr25crfewmrha" path="res://Scenes/Entities/customers/customer-with-path.tscn" id="6_ocxwy"]
+[ext_resource type="PackedScene" uid="uid://dt4tjd0cxr7yq" path="res://Scenes/Entities/customers/spawner.tscn" id="7_pghti"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rid0n"]
 texture = ExtResource("1_2tlq3")
@@ -229,8 +231,6 @@ position = Vector2(0, 9.5)
 
 [node name="Player" parent="." instance=ExtResource("2_lchm3")]
 position = Vector2(412, 153)
-speed = 50.0
-sprint_speed = 100.0
 
 [node name="Customer Camera" type="Camera2D" parent="." groups=["Cameras"]]
 anchor_mode = 0
@@ -254,7 +254,19 @@ position = Vector2(521, 150.215)
 scale = Vector2(1.06, 1.06)
 shape = SubResource("RectangleShape2D_3etly")
 
+[node name="Path2D" parent="." instance=ExtResource("6_ocxwy")]
+position = Vector2(0, 170)
+
+[node name="PathFollow2D" parent="Path2D" index="0"]
+loop = false
+
+[node name="Spawner" parent="Path2D/PathFollow2D" index="0" instance=ExtResource("7_pghti")]
+position = Vector2(-98.017, 0.819214)
+rotation = 0.0120476
+scale = Vector2(1, 1)
+
 [connection signal="body_entered" from="transition_area2" to="transition_area2" method="_on_body_entered"]
 [connection signal="body_exited" from="transition_area2" to="transition_area2" method="_on_body_exited"]
 
 [editable path="DoughProducer"]
+[editable path="Path2D"]

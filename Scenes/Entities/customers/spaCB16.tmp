@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt4tjd0cxr7yq"]
+
+[ext_resource type="Script" path="res://Scenes/Entities/customers/spawner.gd" id="1_hs7u0"]
+[ext_resource type="PackedScene" uid="uid://3vpgeykfxna2" path="res://Scenes/Entities/customers/customer_class.tscn" id="2_w51ux"]
+
+[node name="Spawner" type="Node2D"]
+script = ExtResource("1_hs7u0")
+scenes = Array[PackedScene]([ExtResource("2_w51ux")])
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

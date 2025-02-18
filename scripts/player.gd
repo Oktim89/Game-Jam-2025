@@ -3,10 +3,10 @@ extends CharacterBody2D
 @onready var anim =$Sprite
 
 #brings the animation of the sprite into this script
-@export var speed : float = 50.0 # sets how fast our character moves
-@export var sprint_speed : float = 100.0
+@export var speed : float = 175.0 # sets how fast our character moves
+@export var sprint_speed : float = 175.0
 
-const current_speed : float = 50.0
+const current_speed : float = 175.0
 var is_moving : bool = false
 var dir : String = "none"
 var last_direction:Vector2

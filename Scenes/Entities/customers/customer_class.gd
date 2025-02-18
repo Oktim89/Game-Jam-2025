@@ -4,9 +4,8 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @onready var anim =$AnimatedSprite2D
-@onready var sprite=$Sprite2D
 @onready var customer =$"."
-var current_pos
+var correct_order = Globals.final_order
 var interact_pressed:bool = false
 @onready var path_2D = customer.get_parent().get_parent()
 @onready var path_follow = customer.get_parent()
@@ -28,9 +27,12 @@ func _physics_process(delta: float) -> void:#
 	if movement.length()==0:
 		anim.play("idle_right")
 	
-	if Input.is_action_just_pressed("ui_accept"):
-			interact_pressed=true
-			move_speed=60
+	#if Input.is_action_just_pressed("ui_accept") and correct_order =="Cheese Pizza":
+			#interact_pressed=true
+			#move_speed=60
+	if correct_order=="Cheese Pizza":
+		pass
+			
 	
 	
 	
@@ -62,9 +64,9 @@ func update_animation(movement: Vector2)->void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player") and interact_pressed==false:
+	if body.is_in_group("Player"):
 		move_speed=0
-		print("hello")
+		print("I want Cheese Pizza")
 		
 		
 			

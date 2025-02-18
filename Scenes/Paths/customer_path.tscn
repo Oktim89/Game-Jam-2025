@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://csvxqjn5c6tnf"]
+
+[ext_resource type="Script" path="res://Scenes/Paths/customer_path.gd" id="1_nkeb5"]
+[ext_resource type="PackedScene" uid="uid://dr25crfewmrha" path="res://Scenes/Entities/customers/customer-with-path.tscn" id="1_utt1b"]
+
+[node name="CustomerPath" type="Node2D"]
+script = ExtResource("1_nkeb5")
+scenes = Array[PackedScene]([ExtResource("1_utt1b")])
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

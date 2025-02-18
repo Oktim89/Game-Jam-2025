@@ -1,6 +1,5 @@
 extends Node2D
-class_name Producer
-@onready var dough =$Area2D/Sprite2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,8 +13,7 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player")  and Globals.item_in_hands==false:
-		print("Picked up dough")
-		Globals.emit_signal("update_dough_pos")
-		
-		
+	if body.is_in_group("Player"):
+		print("Picked up pizza")
+		Globals.emit_signal("update_pizza_pos")
+		Globals.final_order ="Cheese Pizza"

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://becc86uw3vjto"]
+
+[ext_resource type="PackedScene" uid="uid://da3lcf382gsws" path="res://Scenes/Kitchen/dough/dough_producer.tscn" id="1_dvd3o"]
+
+[node name="PizzaProducer" instance=ExtResource("1_dvd3o")]
+
+[node name="Sprite2D" parent="Area2D" index="1"]
+visible = false
+frame = 0

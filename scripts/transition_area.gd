@@ -4,10 +4,10 @@ var is_moving : bool = false
 var dir : String = "none"
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("left"):
+	if Input.is_action_pressed("left") or Input.is_action_pressed("ui_left"):
 		is_moving = true
 		dir = "left"
-	elif Input.is_action_pressed("right"):
+	elif Input.is_action_pressed("right") or Input.is_action_just_pressed("ui_right"):
 		is_moving = true
 		dir = "right"
 	

@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*res://Globals/globals.gd"
-GlobalDough="*res://Globals/global_dough.tscn"
 
 [display]
 

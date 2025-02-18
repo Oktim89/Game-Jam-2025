@@ -2,14 +2,14 @@
 
 [sub_resource type="Curve2D" id="Curve2D_gsgtf"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 15, -1, 0, 0, 0, 0, 22, -5, 0, 0, 0, 0, 98, -2, 0, 0, 0, 0, 101, 41, 0, 0, 0, 0, 15, 40, 0, 0, 0, 0, 15, -1)
+"points": PackedVector2Array(0, 0, 0, 0, 98, -2, 0, 0, 0, 0, 148, -1, 0, 0, 0, 0, 187, -3, 0, 0, 0, 0, 236, -2, 0, 0, 0, 0, 288, -1, 0, 0, 0, 0, 335, -2, 0, 0, 0, 0, 366, -3, 0, 0, 0, 0, 382, -4, 0, 0, 0, 0, 383, -40, 0, 0, 0, 0, 384, -66, 0, 0, 0, 0, 385, -85, 0, 0, 0, 0, 272, -84, 0, 0, 0, 0, 204, -83, 0, 0, 0, 0, 138, -83, 0, 0, 0, 0, 96, -83, 0, 0, 0, 0, 50, -82, 0, 0, 0, 0, 1, -83, 0, 0, 0, 0, -46, -86)
 }
-point_count = 6
+point_count = 18
 
 [node name="Path2D" type="Path2D"]
 curve = SubResource("Curve2D_gsgtf")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(15, -1)
+position = Vector2(98, -2)
 rotation = -0.0120476
 rotates = false

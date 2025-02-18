@@ -3,10 +3,11 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-@onready var anim =$AnimationPlayer
+@onready var anim =$AnimatedSprite2D
 @onready var sprite=$Sprite2D
 @onready var customer =$"."
 var current_pos
+var interact_pressed:bool = false
 @onready var path_2D = customer.get_parent().get_parent()
 @onready var path_follow = customer.get_parent()
 @export var move_speed = 60
@@ -17,16 +18,21 @@ func _ready() -> void:
 	last_position=global_position
 	
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void:#
 	path_follow.progress += move_speed * delta
 	global_position= path_follow.global_position
 	var movement:= global_position - last_position
 	if movement.length()>0.1:
 		update_animation(movement)
 	last_position = global_position
-	if path_follow.progress_ratio > 0.3 and path_follow.progress_ratio < 0.4:
-		path_follow.progress_ratio = 0.33333
-		update_animation(movement)
+	if movement.length()==0:
+		anim.play("idle_right")
+	
+	if Input.is_action_just_pressed("ui_accept"):
+			interact_pressed=true
+			move_speed=60
+	
+	
 	
 
 	
@@ -34,29 +40,33 @@ func update_animation(movement: Vector2)->void:
 	var anim_name:="walk_"
 	var anim_idle:="idle"
 	var count=0
-	var last_movement
+	var last_movement= "idle_down"
 	anim_name +=(
 		"right"
 		if abs(movement.x)> abs(movement.y) and movement.x >0
 		else "left" if abs(movement.x) > (movement.y) else "up" if movement.y <0 else "down" 
 	)
-	
+
 	if abs(movement.x)==0 and abs(movement.y) > abs(movement.x):
 		anim_name="walk_up"
-	if anim.current_animation!= anim_name:
-		anim.play(anim_name)
-	if last_movement==movement:
-		count+=1
-		if last_movement==movement and count>10:
-			anim.play("idle_down") # change to idle right
 		
+	if abs(movement.x)<0.06:
+		anim_name="walk_up"
+	
+	if anim.animation!= anim_name:
+		anim.play(anim_name)
+
 	
 
 	
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"):
-		path_follow.progress_ratio = 0.41
+	if body.is_in_group("Player") and interact_pressed==false:
+		move_speed=0
+		print("hello")
+		
+		
+			
 		
 		

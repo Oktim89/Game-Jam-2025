@@ -64,7 +64,7 @@ func update_animation(movement: Vector2)->void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"):
+	if body.is_in_group("Counter"):
 		move_speed=0
 		print("I want Cheese Pizza")
 		

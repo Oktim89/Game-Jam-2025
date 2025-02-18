@@ -3,12 +3,13 @@
 [ext_resource type="Script" path="res://pizza/pizza.gd" id="1_myup0"]
 [ext_resource type="Texture2D" uid="uid://bwu42jptwmi5j" path="res://pizza/stock-vector-pizza-pixel-art-fast-food-bit-video-game-old-school-digital-graphics-1349513102-removebg-preview.png" id="2_8rlji"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0wb0i"]
-radius = 63.002
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xq3rm"]
+size = Vector2(120, 106.333)
 
 [node name="pizza" type="Area2D"]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_myup0")
+time = 1
 
 [node name="PizzaSprite" type="Sprite2D" parent="."]
 modulate = Color(0.601223, 0.601223, 0.601223, 1)
@@ -17,11 +18,13 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_8rlji")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 13.5)
-shape = SubResource("CircleShape2D_0wb0i")
+position = Vector2(0, 26.8333)
+shape = SubResource("RectangleShape2D_xq3rm")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.479
+wait_time = 5.0
+one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

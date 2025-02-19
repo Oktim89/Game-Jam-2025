@@ -17,7 +17,7 @@ var label_scene =preload("res://pizza/label.tscn")
 func _ready():
 	randomize()
 	timer = $Timer
-	timer.wait_time = time
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -55,7 +55,6 @@ func spawn_key(times_looped):
 			key.position = Vector2(random_x, random_y)
 			add_child(key)
 			key_nodes.append(key)
-			print(key_nodes)
 
 
 func clear_keys():

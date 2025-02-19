@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://cw0ge1iunhunf"]
+
+[ext_resource type="Script" path="res://topping/toppings.gd" id="1_tsd4s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmpwt"]
+size = Vector2(140.5, 109.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ag0k"]
+size = Vector2(140.5, 109.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ha5gb"]
+size = Vector2(140.5, 109.75)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s15xq"]
+radius = 64.75
+height = 322.0
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_tsd4s")
+
+[node name="Pepperoni_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pepperoni_area"]
+position = Vector2(148, 287)
+shape = SubResource("RectangleShape2D_cmpwt")
+
+[node name="Olives_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Olives_area"]
+position = Vector2(316, 287)
+shape = SubResource("RectangleShape2D_7ag0k")
+
+[node name="Mushrooms_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mushrooms_area"]
+position = Vector2(495, 291)
+shape = SubResource("RectangleShape2D_ha5gb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(327, 144)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_s15xq")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Pepperoni_area" to="." method="_on_pepperoni_area_mouse_entered"]
+[connection signal="mouse_exited" from="Pepperoni_area" to="." method="_on_pepperoni_area_mouse_exited"]
+[connection signal="mouse_entered" from="Olives_area" to="." method="_on_olives_area_mouse_entered"]
+[connection signal="mouse_exited" from="Olives_area" to="." method="_on_olives_area_mouse_exited"]
+[connection signal="mouse_entered" from="Mushrooms_area" to="." method="_on_mushrooms_area_mouse_entered"]
+[connection signal="mouse_exited" from="Mushrooms_area" to="." method="_on_mushrooms_area_mouse_exited"]

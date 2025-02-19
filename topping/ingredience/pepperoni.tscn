@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://qnbs3xj3jvdh"]
+
+[ext_resource type="Texture2D" uid="uid://b3a5nxmmvasw7" path="res://topping/Idle.png" id="1_j8okf"]
+
+[node name="pepperoni" type="Sprite2D"]
+texture = ExtResource("1_j8okf")

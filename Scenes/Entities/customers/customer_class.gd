@@ -147,3 +147,8 @@ func _on_counter_dectection_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Counter"):
 		at_counter_area=true
 		move_speed=0
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	print("Gib")
+	queue_free()

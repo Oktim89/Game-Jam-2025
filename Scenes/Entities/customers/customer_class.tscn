@@ -309,7 +309,12 @@ debug_color = Color(0.989449, 0, 0.290316, 0.42)
 
 [node name="RayCast2D" parent="." instance=ExtResource("4_w7jg1")]
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-0.5, 2)
+scale = Vector2(0.9, 1.2)
+
 [connection signal="body_entered" from="CounterDectection" to="." method="_on_counter_dectection_body_entered"]
 [connection signal="body_exited" from="CounterDectection" to="." method="_on_counter_dectection_body_exited"]
 [connection signal="body_entered" from="Order_detect" to="." method="_on_order_detect_body_entered"]
 [connection signal="body_exited" from="Order_detect" to="." method="_on_order_detect_body_exited"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

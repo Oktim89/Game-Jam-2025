@@ -11,7 +11,11 @@ func _ready() -> void:
 
 
 
-
+func _process(delta: float) -> void:
+	if Globals.order_success:
+		remove_item_in_hand()
+		Globals.order_success=false
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func update_dough_pos():
@@ -26,6 +30,7 @@ func update_dough_pos():
 func remove_item_in_hand()->void:
 	remove_child($".".get_child(0))
 	Globals.item_in_hands=false
+	Globals.final_order=""
 
 func update_cheese_pizza_pos():
 	if  Globals.item_in_hands==false:

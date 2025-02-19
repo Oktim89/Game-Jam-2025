@@ -17,7 +17,7 @@ var at_counter_area:bool = false
 @export var possible_pizzas: Array = [
 	{"name": "Cheese", "ingredients": ["dough", "sauce", "cheese", "bake"],
 	},
-	{"name": "Pepperoni", "ingredients": ["dough", "sauce", "cheese", "pepperoni", "bake"]}
+	#{"name": "Pepperoni", "ingredients": ["dough", "sauce", "cheese", "pepperoni", "bake"]}
 	
 ]
 #{"name": "pepperoni", "ingredients": ["dough", "sauce", "cheese", "pepperoni", "bake"]
@@ -68,6 +68,8 @@ func _physics_process(delta: float) -> void:
 		move_speed=60
 		customer_ordered= true
 		at_counter_area = false
+		Globals.order_success=true
+		
 		#print(foward_dectection.get_collider())
 	
 	#if Input.is_action_just_pressed("ui_accept") and correct_order =="Cheese Pizza":

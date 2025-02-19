@@ -1,8 +1,9 @@
-[gd_scene load_steps=39 format=3 uid="uid://3vpgeykfxna2"]
+[gd_scene load_steps=41 format=3 uid="uid://3vpgeykfxna2"]
 
 [ext_resource type="Script" path="res://Scenes/Entities/customers/customer_class.gd" id="1_je7ha"]
 [ext_resource type="Texture2D" uid="uid://ms5qwogsswlx" path="res://16x16/Char_001_Idle.png" id="1_mtvwx"]
 [ext_resource type="Texture2D" uid="uid://cdnov1y538mox" path="res://16x16/Char_001.png" id="2_thggq"]
+[ext_resource type="PackedScene" uid="uid://c5cy6k3wnnyri" path="res://Scenes/test/ray_cast_2d.tscn" id="4_w7jg1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lqd5c"]
 radius = 7.0
@@ -278,21 +279,37 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6g5nb"]
+radius = 36.5034
+
 [node name="Customer" type="CharacterBody2D" groups=["Customers"]]
 scale = Vector2(2, 2)
+collision_layer = 3
 script = ExtResource("1_je7ha")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_lqd5c")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="CounterDectection" type="Area2D" parent="."]
+collision_layer = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CounterDectection"]
 shape = SubResource("CircleShape2D_24tsf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2i2be")
 animation = &"walk_left"
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="Order_detect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Order_detect"]
+shape = SubResource("CircleShape2D_6g5nb")
+debug_color = Color(0.989449, 0, 0.290316, 0.42)
+
+[node name="RayCast2D" parent="." instance=ExtResource("4_w7jg1")]
+
+[connection signal="body_entered" from="CounterDectection" to="." method="_on_counter_dectection_body_entered"]
+[connection signal="body_exited" from="CounterDectection" to="." method="_on_counter_dectection_body_exited"]
+[connection signal="body_entered" from="Order_detect" to="." method="_on_order_detect_body_entered"]
+[connection signal="body_exited" from="Order_detect" to="." method="_on_order_detect_body_exited"]

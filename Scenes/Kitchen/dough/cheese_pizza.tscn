@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://cf2gnhsc3cu04"]
 
-[ext_resource type="Texture2D" uid="uid://deb0ykkbijup" path="res://pizza/pizza_sprites.png" id="1_ed5mj"]
-[ext_resource type="Script" path="res://Scenes/Kitchen/dough/doughflatter.gd" id="1_nh1gq"]
+[ext_resource type="Script" path="res://Scenes/Kitchen/dough/cheese_pizza.gd" id="1_6srbg"]
+[ext_resource type="Texture2D" uid="uid://byu0eqiq06nm8" path="res://16x16/sauce.png" id="2_5nfhm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvvpy"]
 size = Vector2(20, 39)
 
-[node name="Doughflatter" type="Node2D"]
-script = ExtResource("1_nh1gq")
+[node name="CheesePizza" type="Node2D"]
+script = ExtResource("1_6srbg")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -16,10 +16,7 @@ position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_jvvpy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_ed5mj")
-hframes = 3
-vframes = 3
-frame = 4
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_5nfhm")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,12 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://b18a76b2lkwol"]
 
-[ext_resource type="Texture2D" uid="uid://deb0ykkbijup" path="res://pizza/pizza_sprites.png" id="1_j136u"]
+[ext_resource type="Texture2D" uid="uid://ce3tqbk6ry2ne" path="res://16x16/dough.png" id="1_8rvfh"]
 
 [node name="Global_dough" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_j136u")
-hframes = 3
-vframes = 3
-frame = 1
+texture = ExtResource("1_8rvfh")

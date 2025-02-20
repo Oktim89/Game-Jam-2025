@@ -1,0 +1,143 @@
+[gd_scene load_steps=11 format=3 uid="uid://mxoyvjsuwulk"]
+
+[ext_resource type="StyleBox" uid="uid://cegtcpx572ttm" path="res://Scenes/UI/style_box/focus.tres" id="1_uu851"]
+[ext_resource type="Texture2D" uid="uid://dpk538f1lnl7n" path="res://Scenes/UI/Backboard.png" id="1_vp5a4"]
+[ext_resource type="StyleBox" uid="uid://bqn53tb1wrbre" path="res://Scenes/UI/style_box/hover_button.tres" id="1_xf1th"]
+[ext_resource type="StyleBox" uid="uid://uwsviieo4js3" path="res://Scenes/UI/style_box/normal.tres" id="2_imcbn"]
+[ext_resource type="Script" path="res://Scenes/UI/menu/menu.gd" id="4_fgaov"]
+
+[sub_resource type="Theme" id="Theme_cl17r"]
+Button/font_sizes/font_size = 14
+Button/styles/focus = ExtResource("1_uu851")
+Button/styles/hover = ExtResource("1_xf1th")
+Button/styles/normal = ExtResource("2_imcbn")
+
+[sub_resource type="Theme" id="Theme_x78qt"]
+
+[sub_resource type="Animation" id="Animation_d7ult"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c1k0e"]
+resource_name = "zoom_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(10, 10)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-0.5, 0.5),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -20)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vjyxm"]
+_data = {
+"RESET": SubResource("Animation_d7ult"),
+"zoom_in": SubResource("Animation_c1k0e")
+}
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_cl17r")
+script = ExtResource("4_fgaov")
+
+[node name="Panel" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -183.0
+offset_right = 265.0
+offset_bottom = 199.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_x78qt")
+texture = ExtResource("1_vp5a4")
+patch_margin_left = 7
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.0
+offset_top = -53.5
+offset_right = 67.0
+offset_bottom = 53.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="Options" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="Quit" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vjyxm")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 320)
+
+[connection signal="pressed" from="Panel/VBoxContainer/Start" to="." method="_on_start_pressed"]

@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 @export var possible_pizzas: Array = [
-	{"name": "cheese", "ingredients": ["dough", "sauce", "cheese", "bake"]},
-	{"name": "pepperoni", "ingredients": ["dough", "sauce", "cheese", "pepperoni", "bake"]},
+	{"name": "Cheese", "ingredients": ["dough", "sauce", "cheese", "bake"]},
+	{"name": "Pepperoni", "ingredients": ["dough", "sauce", "cheese", "pepperoni", "bake"]},
 ]
 
 var current_order = {}

@@ -44,8 +44,5 @@ shape = SubResource("CapsuleShape2D_s15xq")
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Pepperoni_area" to="." method="_on_pepperoni_area_mouse_entered"]
-[connection signal="mouse_exited" from="Pepperoni_area" to="." method="_on_pepperoni_area_mouse_exited"]
 [connection signal="mouse_entered" from="Olives_area" to="." method="_on_olives_area_mouse_entered"]
-[connection signal="mouse_exited" from="Olives_area" to="." method="_on_olives_area_mouse_exited"]
 [connection signal="mouse_entered" from="Mushrooms_area" to="." method="_on_mushrooms_area_mouse_entered"]
-[connection signal="mouse_exited" from="Mushrooms_area" to="." method="_on_mushrooms_area_mouse_exited"]

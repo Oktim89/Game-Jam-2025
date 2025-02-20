@@ -22,6 +22,8 @@ DampedOscillator="*res://addons/DampedOscillator/scripts/damped_oscillator.tscn"
 
 [display]
 
+window/size/viewport_width=654
+window/size/viewport_height=360
 window/stretch/aspect="expand"
 window/handheld/orientation=6
 

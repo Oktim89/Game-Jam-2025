@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 #brings the animation of the sprite into this script
 @export var speed : float = 175.0 # sets how fast our character moves
-@export var sprint_speed : float = 175.0
+@export var sprint_speed : float = 300.0
 
 const current_speed : float = 175.0
 var is_moving : bool = false
@@ -17,7 +17,7 @@ var last_direction:Vector2
 func _process(delta):
 	if Input.is_action_pressed("sprint"): #make sprinting mechanic
 		speed = sprint_speed
-	elif Input.is_action_just_released("sprint"):
+	else:
 		speed = current_speed
 			
 		

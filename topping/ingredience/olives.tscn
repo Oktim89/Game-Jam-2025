@@ -1,6 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://ckoqpqnv3wnll"]
 
-[ext_resource type="Texture2D" uid="uid://b3a5nxmmvasw7" path="res://topping/Idle.png" id="1_s1xuj"]
+[ext_resource type="Texture2D" uid="uid://cu2x5571hcm5p" path="res://topping/png-transparent-patrick-star-spongebob-squarepants-sandy-cheeks-plankton-and-karen-squidward-tentacles-patric-hand-vertebrate-cartoon-thumbnail.png" id="1_858ei"]
 
 [node name="olives" type="Sprite2D"]
-texture = ExtResource("1_s1xuj")
+position = Vector2(-3, 2.00003)
+scale = Vector2(0.152778, 0.103486)
+texture = ExtResource("1_858ei")

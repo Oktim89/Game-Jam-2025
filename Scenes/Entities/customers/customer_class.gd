@@ -18,8 +18,8 @@ var at_counter_area:bool = false
 	{"name": "Cheese", "ingredients": ["dough", "sauce", "cheese", "bake"],
 	},
 	#{"name": "Pepperoni", "ingredients": ["dough", "sauce", "cheese", "pepperoni", "bake"]}
-	
 ]
+
 #{"name": "pepperoni", "ingredients": ["dough", "sauce", "cheese", "pepperoni", "bake"]
 
 func _ready() -> void:
@@ -28,13 +28,12 @@ func _ready() -> void:
 	#foward_dectection.add_exception_rid(RID(816043786241))
 	pick_random_order()
 	print(current_order)
+	
 	#foward_dectection.exclude_parent=true
 	
-	
-	
-	
-	
-	
+
+
+
 func _physics_process(delta: float) -> void:
 	counter_area()
 	
@@ -69,7 +68,7 @@ func _physics_process(delta: float) -> void:
 		customer_ordered= true
 		at_counter_area = false
 		Globals.order_success=true
-		
+		Globals.money +=20
 		#print(foward_dectection.get_collider())
 	
 	#if Input.is_action_just_pressed("ui_accept") and correct_order =="Cheese Pizza":
@@ -81,12 +80,8 @@ func _physics_process(delta: float) -> void:
 		#move_speed=60
 		
 	
-	
 
-	
-		
 
-	
 func update_animation(movement: Vector2)->void:
 	var anim_name:="walk_"
 	var anim_idle:="idle"
@@ -107,24 +102,16 @@ func update_animation(movement: Vector2)->void:
 	if anim.animation!= anim_name:
 		anim.play(anim_name)
 
-	
 
-	
 
 func counter_area():
 	if at_counter_area==true and customer_ordered==false:
 		move_speed=0
 
-		
-			
-		
+
 func pick_random_order():
 	current_order = possible_pizzas.pick_random()
 	current_order = current_order["name"] +" Pizza"
-	
-
-
-	
 
 
 func _on_order_detect_body_entered(body: Node2D) -> void:
@@ -132,8 +119,6 @@ func _on_order_detect_body_entered(body: Node2D) -> void:
 		#var target = foward_dectection.get_collider_rid()
 		player_in_area=true
 		#foward_dectection.set_collision_mask_value(1 , false)
-
-
 
 
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=4 uid="uid://clu8n42om36en"]
+[gd_scene load_steps=18 format=4 uid="uid://clu8n42om36en"]
 
 [ext_resource type="Texture2D" uid="uid://dai7pyqep1boa" path="res://Wall and Floor/TopDownHouse_FloorsAndWalls.png" id="1_2tlq3"]
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_fv56u"]
 [ext_resource type="Texture2D" uid="uid://bcyhbr7ccexwr" path="res://kitchen assets/starting.png" id="1_vnqig"]
 [ext_resource type="PackedScene" uid="uid://b0ts5nqfbmnpd" path="res://Scenes/Entities/Player/player.tscn" id="2_lchm3"]
 [ext_resource type="Script" path="res://scripts/transition_area.gd" id="3_uesyp"]
@@ -224,6 +225,7 @@ radius = 14.0
 height = 184.0
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_fv56u")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 position = Vector2(0, 48)

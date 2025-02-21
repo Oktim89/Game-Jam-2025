@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dgtw70w8evkan"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rcayj"]
-font_size = 24
+font_size = 44
 font_color = Color(0.227451, 1, 1, 1)
 
 [node name="Panel" type="Panel"]

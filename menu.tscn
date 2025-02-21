@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://mxoyvjsuwulk"]
+[gd_scene load_steps=15 format=3 uid="uid://mxoyvjsuwulk"]
 
 [ext_resource type="StyleBox" uid="uid://cegtcpx572ttm" path="res://Scenes/UI/style_box/focus.tres" id="1_uu851"]
 [ext_resource type="Texture2D" uid="uid://dpk538f1lnl7n" path="res://Scenes/UI/Backboard.png" id="1_vp5a4"]
 [ext_resource type="StyleBox" uid="uid://bqn53tb1wrbre" path="res://Scenes/UI/style_box/hover_button.tres" id="1_xf1th"]
 [ext_resource type="StyleBox" uid="uid://uwsviieo4js3" path="res://Scenes/UI/style_box/normal.tres" id="2_imcbn"]
 [ext_resource type="Script" path="res://Scenes/UI/menu/menu.gd" id="4_fgaov"]
-[ext_resource type="AudioStream" uid="uid://be3n8lt4jk0w3" path="res://audio/Pizza Panic main theme.mp3" id="6_gfae6"]
+[ext_resource type="FontFile" uid="uid://3mcky8n14mkh" path="res://MegamaxJonathanToo-YqOq2.ttf" id="5_c31xa"]
+[ext_resource type="AudioStream" uid="uid://be3n8lt4jk0w3" path="res://addons/audio/Pizza Panic main theme.mp3" id="6_gfae6"]
 
 [sub_resource type="Theme" id="Theme_cl17r"]
 Button/font_sizes/font_size = 14
@@ -13,33 +14,70 @@ Button/styles/focus = ExtResource("1_uu851")
 Button/styles/hover = ExtResource("1_xf1th")
 Button/styles/normal = ExtResource("2_imcbn")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfoi0"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [sub_resource type="Theme" id="Theme_x78qt"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("5_c31xa")
+Button/styles/pressed = SubResource("StyleBoxFlat_cfoi0")
+
+[sub_resource type="Theme" id="Theme_kfpq0"]
+Button/styles/focus = ExtResource("1_uu851")
+Button/styles/hover = ExtResource("1_xf1th")
+Button/styles/normal = ExtResource("2_imcbn")
 
 [sub_resource type="Animation" id="Animation_d7ult"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/path = NodePath("Camera2D:offset")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Camera2D:offset")
+tracks/1/path = NodePath("Camera2D:zoom")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_c1k0e"]
@@ -47,26 +85,26 @@ resource_name = "zoom_in"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/path = NodePath("Camera2D:offset")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(2, 2),
+"transitions": PackedFloat32Array(-0.5, 0.5),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(10, 10)]
+"values": [Vector2(0, 0), Vector2(0, -20)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Camera2D:offset")
+tracks/1/path = NodePath("Camera2D:zoom")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(-0.5, 0.5),
+"transitions": PackedFloat32Array(2, 2),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -20)]
+"values": [Vector2(1, 1), Vector2(10, 10)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vjyxm"]
@@ -108,24 +146,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -71.0
-offset_top = -37.5
-offset_right = 71.0
-offset_bottom = 37.5
+offset_left = -33.5
+offset_top = -20.0
+offset_right = 33.5
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_kfpq0")
 
-[node name="Start" type="Button" parent="Panel/VBoxContainer"]
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-text = "Start"
-
-[node name="Options" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-text = "Options"
-
-[node name="Quit" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-text = "Quit"
+text = "Start
+"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -133,12 +165,8 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-position = Vector2(574, 321)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_gfae6")
 volume_db = -6.0
 autoplay = true
-
-[connection signal="pressed" from="Panel/VBoxContainer/Start" to="." method="_on_start_pressed"]

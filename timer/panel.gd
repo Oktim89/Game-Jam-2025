@@ -1,8 +1,8 @@
 extends Panel
 @onready var hand =$Sprite2D/TextureRect
 var time: float = 0.0
-var minutes : int = 0
-var seconds : int = 0 
+var minutes : float
+var seconds : float 
 var spring = 200.0
 var damp = 10.0
 var velocity = 15.0

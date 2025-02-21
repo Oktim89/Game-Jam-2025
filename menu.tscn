@@ -86,15 +86,9 @@ script = ExtResource("4_fgaov")
 
 [node name="Panel" type="NinePatchRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -275.0
-offset_top = -183.0
-offset_right = 265.0
-offset_bottom = 199.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_x78qt")
@@ -113,10 +107,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -67.0
-offset_top = -53.5
-offset_right = 67.0
-offset_bottom = 53.5
+offset_left = -71.0
+offset_top = -37.5
+offset_right = 71.0
+offset_bottom = 37.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -138,6 +132,7 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(577, 320)
+visible = false
+position = Vector2(574, 321)
 
 [connection signal="pressed" from="Panel/VBoxContainer/Start" to="." method="_on_start_pressed"]

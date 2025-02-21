@@ -150,4 +150,5 @@ func _on_counter_dectection_body_entered(body: Node2D) -> void:
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	queue_free()
+	if path_follow.progress_ratio>=0.95:
+		queue_free()

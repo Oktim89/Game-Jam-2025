@@ -12,8 +12,9 @@ point_count = 19
 curve = SubResource("Curve2D_gsgtf")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(0, -2)
+position = Vector2(-46, -86)
 rotation = -0.0120476
+progress = 894.27
 rotates = false
 
 [node name="Customer" parent="PathFollow2D" instance=ExtResource("2_tcd57")]

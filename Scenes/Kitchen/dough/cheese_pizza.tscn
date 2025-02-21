@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cf2gnhsc3cu04"]
 
 [ext_resource type="Script" path="res://Scenes/Kitchen/dough/cheese_pizza.gd" id="1_6srbg"]
-[ext_resource type="Texture2D" uid="uid://byu0eqiq06nm8" path="res://16x16/sauce.png" id="2_5nfhm"]
+[ext_resource type="Texture2D" uid="uid://dvafwcc1lv6r5" path="res://16x16/cheese.png" id="2_e3u8g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvvpy"]
 size = Vector2(20, 39)
@@ -17,6 +17,6 @@ shape = SubResource("RectangleShape2D_jvvpy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("2_5nfhm")
+texture = ExtResource("2_e3u8g")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

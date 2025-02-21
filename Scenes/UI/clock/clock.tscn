@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://jt8a7qat0y6r"]
+
+[ext_resource type="Texture2D" uid="uid://bskev225adid7" path="res://timer/465229-removebg-preview (1).png" id="1_anjfn"]
+[ext_resource type="Texture2D" uid="uid://rfxe8vjiuc22" path="res://timer/hand.png" id="2_t3s2g"]
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(-70, 29)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_anjfn")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -21.0
+offset_top = -181.0
+offset_right = 19.0
+offset_bottom = -3.0
+pivot_offset = Vector2(20, 178)
+texture = ExtResource("2_t3s2g")

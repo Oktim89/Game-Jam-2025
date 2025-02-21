@@ -5,20 +5,20 @@ var keys = ["B", "C", "U", "F", "G", "H", "I", "J", "L", "Z", "Q", "N"]
 var key_nodes = []
 var current_key = ""
 
+var keys_pressed = 0
+
+
 var key
 var label
 var timer
 @export var letters_quantity =  10
 
-@export var time = 5
 
 var label_scene =preload("res://pizza/label.tscn")
 
 func _ready():
 	randomize()
 	timer = $Timer
-
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -31,17 +31,24 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed(i.get_node("Label").text):
 			i.queue_free()
 			key_nodes.erase(i)
+			keys_pressed +=1
+			if keys_pressed == letters_quantity:
+				win()
 			break
 
 func _on_body_entered(body):
-	in_area = true
+	if body is CharacterBody2D:
+		in_area = true
 
 func _on_body_exited(body):
-	in_area = false
-	clear_keys()
-	timer.stop()
+	if body is CharacterBody2D:
+		in_area = false
+		clear_keys()
+		timer.stop()
 	
 func spawn_key(times_looped):
+	timer.start()
+	
 	for i in range(0, times_looped):
 		key = label_scene.instantiate()
 		label =key.get_node("Label")
@@ -64,5 +71,10 @@ func clear_keys():
 
 
 func _on_timer_timeout():
-	if key_nodes.is_empty() == true:
-		print("You lost baby")
+	print("You lost baby")
+	clear_keys()
+	
+func win():
+	keys_pressed = 0
+	timer.stop()
+	print("you won")

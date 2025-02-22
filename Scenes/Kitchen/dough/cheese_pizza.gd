@@ -1,5 +1,5 @@
 extends Node2D
-
+var scene = load("res://topping/toppings.tscn")
 
 
 

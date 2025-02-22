@@ -17,7 +17,7 @@ var at_counter_area:bool = false
 @export var possible_pizzas: Array = [
 	{"name": "Cheese", "ingredients": ["dough", "sauce", "cheese", "bake"],
 	},
-	#{"name": "Pepperoni", "ingredients": ["dough", "sauce", "cheese", "pepperoni", "bake"]}
+	{"name": "Pepperoni", "ingredients": ["dough", "sauce", "cheese", "pepperoni", "bake"]}
 	
 ]
 #{"name": "pepperoni", "ingredients": ["dough", "sauce", "cheese", "pepperoni", "bake"]

@@ -1,6 +1,5 @@
 extends Panel
 @onready var hand =$Sprite2D/TextureRect
-@export var time: float = 30
 var minutes : int = 0
 var seconds : int = 0 
 var spring = 200.0
@@ -13,14 +12,14 @@ func _ready() -> void:
 	pass
 	
 func _process(delta) -> void:
-	if time > 0:
-		time-= delta
+	if Globals.time > 0:
+		Globals.time-= delta
 	else:
-		Globals.time=0
-		time =0
+		Globals.Globals.time=0
+		Globals.time =0
 	
-	seconds = fmod(time, 60)
-	minutes = fmod(time, 3600) / 60
+	seconds = fmod(Globals.time, 60)
+	minutes = fmod(Globals.time, 3600) / 60
 	$Minutes.text = "%02d:" % minutes
 	$Seconds.text = "%02d." % seconds
 func stop() -> void:

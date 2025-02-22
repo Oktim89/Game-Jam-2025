@@ -7,4 +7,6 @@ signal remove_item_in_hand
 var final_order
 var order_success:bool
 var money = 0
-var time = 30.0
+var time = 300.0
+var served = 0
+var wave = 1

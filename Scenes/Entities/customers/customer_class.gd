@@ -68,7 +68,7 @@ func _physics_process(delta: float) -> void:
 		customer_ordered= true
 		at_counter_area = false
 		Globals.order_success=true
-		Globals.money +=20
+		Globals.served +=1
 		#print(foward_dectection.get_collider())
 	
 	#if Input.is_action_just_pressed("ui_accept") and correct_order =="Cheese Pizza":

@@ -2,7 +2,8 @@ extends CharacterBody2D
 #reeferences to the animated sprite
 @onready var anim =$Sprite
 var player_data = PlayerData.new()
-
+const save_file_path ="user://save/"
+const save_file_name ="PlayerSave.tres"
 #brings the animation of the sprite into this script
 @export var speed : float = 175.0 # sets how fast our character moves
 @export var sprint_speed : float = 300.0
@@ -11,7 +12,8 @@ const current_speed : float = 175.0
 #var is_moving : bool = false
 var last_direction:Vector2
 
-
+func _ready() -> void:
+	
 
 	
 func _process(delta):

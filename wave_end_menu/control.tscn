@@ -43,6 +43,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 328.0
 offset_top = 377.0
 offset_right = 1609.0
@@ -63,6 +64,7 @@ theme_override_font_sizes/font_size = 85
 text = "Start"
 
 [node name="Button2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1506.0
 offset_top = 901.0
 offset_right = 1905.0

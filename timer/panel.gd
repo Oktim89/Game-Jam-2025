@@ -3,8 +3,6 @@ extends Panel
 var time: float = 0.0
 var minutes : float
 var seconds : float 
-var minutes : int = 0
-var seconds : int = 0 
 var spring = 200.0
 var damp = 10.0
 var velocity = 15.0

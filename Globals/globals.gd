@@ -7,3 +7,4 @@ var final_order
 var order_success:bool
 var money:int
 signal update_money
+var current_item:String

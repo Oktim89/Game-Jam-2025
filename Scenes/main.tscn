@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://clu8n42om36en"]
+[gd_scene load_steps=20 format=4 uid="uid://clu8n42om36en"]
 
 [ext_resource type="Texture2D" uid="uid://dai7pyqep1boa" path="res://Wall and Floor/TopDownHouse_FloorsAndWalls.png" id="1_2tlq3"]
 [ext_resource type="Texture2D" uid="uid://bcyhbr7ccexwr" path="res://kitchen assets/starting.png" id="1_vnqig"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bsu3h4cfo3uj" path="res://pizza/pizza.tscn" id="9_ok8me"]
 [ext_resource type="PackedScene" uid="uid://dxxt112pcxhot" path="res://timer/panel.tscn" id="10_fyraa"]
 [ext_resource type="PackedScene" uid="uid://vrkgy5r6wm7c" path="res://Scenes/UI/visuals/money/money_indicator.tscn" id="11_mwji4"]
+[ext_resource type="PackedScene" uid="uid://btd3dhy24ke7k" path="res://Scenes/Kitchen/oven/oven.tscn" id="12_66d3p"]
+[ext_resource type="PackedScene" uid="uid://lylqfb51ws5r" path="res://Scenes/Kitchen/roller/roller.tscn" id="13_xwnmg"]
 
 [sub_resource type="GDScript" id="GDScript_14u41"]
 script/source = "extends Camera2D
@@ -291,6 +293,13 @@ offset_left = 1567.0
 offset_top = -10.0
 offset_right = 1567.0
 offset_bottom = -10.0
+
+[node name="Oven" parent="." instance=ExtResource("12_66d3p")]
+position = Vector2(733, 80)
+scale = Vector2(0.2, 0.2)
+
+[node name="Roller" parent="." instance=ExtResource("13_xwnmg")]
+position = Vector2(577, 156)
 
 [connection signal="body_entered" from="transition_area2" to="transition_area2" method="_on_body_entered"]
 [connection signal="body_exited" from="transition_area2" to="transition_area2" method="_on_body_exited"]

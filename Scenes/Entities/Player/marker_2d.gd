@@ -23,12 +23,14 @@ func update_dough_pos():
 		var temp = scenes[0].instantiate()
 		add_child(temp)
 		Globals.item_in_hands= true
+		Globals.current_item="Dough"
 
 	
 func remove_item_in_hand()->void:
 	remove_child($".".get_child(0))
 	Globals.item_in_hands=false
 	Globals.final_order=""
+	Globals.current_item=""
 
 func update_cheese_pizza_pos():
 	if  Globals.item_in_hands==false:

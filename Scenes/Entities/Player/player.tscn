@@ -281,6 +281,8 @@ height = 14.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_juq15")
+speed = null
+sprint_speed = null
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)

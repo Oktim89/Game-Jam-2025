@@ -6,7 +6,7 @@ var current_topic : String # the selected ingredient
 
 var mouse_in_pizza: String #if mouse is on pizza
 
-
+var main_scene ="res://Scenes/main.tscn"
 
 
 @onready var pepperoni_file = preload("res://topping/ingredience/pepperoni.tscn")
@@ -19,7 +19,8 @@ func _physics_process(delta):
 	var pepperoni_scene = pepperoni_file.instantiate()
 	var olives_scene = olives_file.instantiate()
 	var mushrooms_scene = mushrooms_file.instantiate()
-
+	if Input.is_action_just_pressed("B"):
+		get_tree().change_scene_to_file(main_scene)
 
 	if mouse_in_pizza == "in_area": # checking if the conditions are met and spawning images
 		if Input.is_action_just_pressed("left_mouse"):

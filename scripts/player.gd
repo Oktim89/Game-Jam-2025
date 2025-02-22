@@ -1,6 +1,7 @@
 extends CharacterBody2D
 #reeferences to the animated sprite
 @onready var anim =$Sprite
+var player_data = PlayerData.new()
 
 #brings the animation of the sprite into this script
 @export var speed : float = 175.0 # sets how fast our character moves
@@ -8,7 +9,6 @@ extends CharacterBody2D
 
 const current_speed : float = 175.0
 #var is_moving : bool = false
-var dir : String = "none"
 var last_direction:Vector2
 
 

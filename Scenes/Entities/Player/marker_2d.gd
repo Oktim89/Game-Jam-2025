@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 		Globals.money+=1
 		remove_item_in_hand()
 		Globals.order_success=false
+		emit_signal("hidden")
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 

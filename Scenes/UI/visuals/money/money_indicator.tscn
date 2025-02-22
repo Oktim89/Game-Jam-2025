@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://vrkgy5r6wm7c"]
+
+[ext_resource type="Script" path="res://Scenes/UI/visuals/money/money_indicator.gd" id="1_xme2h"]
+[ext_resource type="Texture2D" uid="uid://d2tobb3pgfts" path="res://Scenes/UI/visuals/money/money_bar.png" id="2_noxvp"]
+
+[sub_resource type="Theme" id="Theme_wo1ue"]
+RichTextLabel/font_sizes/normal_font_size = 64
+
+[node name="MoneyIndicator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xme2h")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 747.0
+offset_bottom = 344.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_noxvp")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/TextureRect"]
+layout_mode = 2
+offset_left = 124.0
+offset_top = 20.0
+offset_right = 324.0
+offset_bottom = 85.0
+theme = SubResource("Theme_wo1ue")
+text = "0000"
+fit_content = true
+autowrap_mode = 1

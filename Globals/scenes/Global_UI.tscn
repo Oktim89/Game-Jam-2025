@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://8v1spjpb1iex"]
+
+[ext_resource type="PackedScene" uid="uid://vrkgy5r6wm7c" path="res://Scenes/UI/visuals/money/money_indicator.tscn" id="1_5pkvj"]
+
+[node name="GlobalUi" type="Node"]
+
+[node name="MoneyIndicator" parent="." instance=ExtResource("1_5pkvj")]

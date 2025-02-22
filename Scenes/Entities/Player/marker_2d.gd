@@ -12,6 +12,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Globals.order_success:
+		Globals.money+=1
 		remove_item_in_hand()
 		Globals.order_success=false
 		

@@ -3,21 +3,28 @@ extends Panel
 var time: float = 0.0
 var minutes : float
 var seconds : float 
+var minutes : int = 0
+var seconds : int = 0 
 var spring = 200.0
 var damp = 10.0
 var velocity = 15.0
+
 
 
 func _ready() -> void:
 	pass
 	
 func _process(delta) -> void:
-	time+= delta
-	seconds = fmod(time, 60)
-	minutes = fmod(time, 3600) / 60
+	if Globals.time > 0:
+		Globals.time-= delta
+	else:
+		Globals.Globals.time=0
+		Globals.time =0
+	
+	seconds = fmod(Globals.time, 60)
+	minutes = fmod(Globals.time, 3600) / 60
 	$Minutes.text = "%02d:" % minutes
 	$Seconds.text = "%02d." % seconds
-
 func stop() -> void:
 	set_process(false)
 	

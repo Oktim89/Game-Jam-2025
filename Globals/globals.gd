@@ -8,3 +8,7 @@ var order_success:bool
 var money:int
 signal update_money
 var current_item:String
+var money = 0
+var time = 300.0
+var served = 0
+var wave = 1

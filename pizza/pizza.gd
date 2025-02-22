@@ -7,6 +7,7 @@ var current_key = ""
 
 var keys_pressed = 0
 
+var keys_clicked : int
 
 var key
 var label
@@ -22,6 +23,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	if keys_clicked == 10:
+		win()
+	
+	
 	if Input.is_action_just_pressed("interact") and in_area:
 		if key_nodes.is_empty() == true:
 			timer.start()
@@ -30,6 +35,7 @@ func _physics_process(delta):
 	for i in key_nodes:
 		if Input.is_action_just_pressed(i.get_node("Label").text):
 			i.queue_free()
+			keys_clicked += 1
 			key_nodes.erase(i)
 			keys_pressed +=1
 			if keys_pressed == letters_quantity:
@@ -43,6 +49,7 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if body is CharacterBody2D:
 		in_area = false
+		key_nodes.clear
 		clear_keys()
 		timer.stop()
 	
@@ -77,4 +84,15 @@ func _on_timer_timeout():
 func win():
 	keys_pressed = 0
 	timer.stop()
+	lost()
+
+func lost():
+	clear_keys()
+	keys_clicked = 0
+	key_nodes.clear()
+	print("you lost")
+
+func win():
+	keys_clicked = 0
+	key_nodes.clear()
 	print("you won")

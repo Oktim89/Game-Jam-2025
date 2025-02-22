@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://clu8n42om36en"]
+[gd_scene load_steps=19 format=4 uid="uid://clu8n42om36en"]
 
 [ext_resource type="Texture2D" uid="uid://dai7pyqep1boa" path="res://Wall and Floor/TopDownHouse_FloorsAndWalls.png" id="1_2tlq3"]
 [ext_resource type="Texture2D" uid="uid://bcyhbr7ccexwr" path="res://kitchen assets/starting.png" id="1_vnqig"]
@@ -10,13 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bkcrfbncseqgq" path="res://Scenes/Kitchen/bin/bin.tscn" id="9_alxfg"]
 [ext_resource type="PackedScene" uid="uid://bsu3h4cfo3uj" path="res://pizza/pizza.tscn" id="9_ok8me"]
 [ext_resource type="PackedScene" uid="uid://dxxt112pcxhot" path="res://timer/panel.tscn" id="10_fyraa"]
-[ext_resource type="PackedScene" uid="uid://vrkgy5r6wm7c" path="res://Scenes/UI/visuals/money/money_indicator.tscn" id="11_mwji4"]
-[ext_resource type="PackedScene" uid="uid://btd3dhy24ke7k" path="res://Scenes/Kitchen/oven/oven.tscn" id="12_66d3p"]
-[ext_resource type="PackedScene" uid="uid://lylqfb51ws5r" path="res://Scenes/Kitchen/roller/roller.tscn" id="13_xwnmg"]
-
-[sub_resource type="GDScript" id="GDScript_14u41"]
-script/source = "extends Camera2D
-"
+[ext_resource type="PackedScene" uid="uid://btd3dhy24ke7k" path="res://Scenes/Kitchen/oven/oven.tscn" id="11_x00sv"]
+[ext_resource type="PackedScene" uid="uid://lylqfb51ws5r" path="res://Scenes/Kitchen/roller/roller.tscn" id="12_0imdo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rid0n"]
 texture = ExtResource("1_2tlq3")
@@ -219,6 +214,10 @@ sources/10 = SubResource("TileSetAtlasSource_3uymg")
 sources/0 = SubResource("TileSetAtlasSource_rid0n")
 tile_proxies/coords_level = [[0, Vector2i(0, 0)], [10, Vector2i(0, 0)], [1, Vector2i(0, 0)], [10, Vector2i(1, 0)], [1, Vector2i(0, 1)], [10, Vector2i(1, 1)], [1, Vector2i(0, 2)], [10, Vector2i(1, 2)], [2, Vector2i(0, 0)], [10, Vector2i(2, 0)], [2, Vector2i(0, 1)], [10, Vector2i(2, 1)], [3, Vector2i(0, 0)], [10, Vector2i(3, 0)], [3, Vector2i(0, 1)], [10, Vector2i(3, 1)], [4, Vector2i(0, 0)], [10, Vector2i(4, 0)], [4, Vector2i(0, 1)], [10, Vector2i(4, 1)], [5, Vector2i(0, 0)], [10, Vector2i(5, 0)], [5, Vector2i(0, 1)], [10, Vector2i(5, 1)], [6, Vector2i(0, 0)], [10, Vector2i(6, 0)], [6, Vector2i(0, 1)], [10, Vector2i(6, 1)], [7, Vector2i(0, 0)], [10, Vector2i(7, 0)], [7, Vector2i(0, 1)], [10, Vector2i(7, 1)], [8, Vector2i(0, 0)], [10, Vector2i(8, 0)], [8, Vector2i(0, 1)], [10, Vector2i(8, 1)], [8, Vector2i(0, 2)], [10, Vector2i(8, 2)], [9, Vector2i(0, 0)], [10, Vector2i(9, 0)], [9, Vector2i(0, 1)], [10, Vector2i(9, 1)]]
 
+[sub_resource type="GDScript" id="GDScript_14u41"]
+script/source = "extends Camera2D
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3etly"]
 size = Vector2(0, 148.113)
 
@@ -227,20 +226,6 @@ radius = 14.0
 height = 184.0
 
 [node name="Main" type="Node2D"]
-
-[node name="Customer Camera" type="Camera2D" parent="." groups=["Cameras"]]
-anchor_mode = 0
-zoom = Vector2(1.25, 1.25)
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-script = SubResource("GDScript_14u41")
-
-[node name="Kitchen Camera" type="Camera2D" parent="." groups=["Cameras"]]
-position = Vector2(522, 0)
-anchor_mode = 0
-zoom = Vector2(1.25, 1.25)
-script = SubResource("GDScript_14u41")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 position = Vector2(0, 48)
@@ -255,6 +240,20 @@ position = Vector2(575, 80)
 
 [node name="Player" parent="." instance=ExtResource("2_lchm3")]
 position = Vector2(412, 153)
+
+[node name="Customer Camera" type="Camera2D" parent="." groups=["Cameras"]]
+anchor_mode = 0
+zoom = Vector2(1.25, 1.25)
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+script = SubResource("GDScript_14u41")
+
+[node name="Kitchen Camera" type="Camera2D" parent="." groups=["Cameras"]]
+position = Vector2(522, 0)
+anchor_mode = 0
+zoom = Vector2(1.25, 1.25)
+script = SubResource("GDScript_14u41")
 
 [node name="transition_area2" type="Area2D" parent="."]
 script = ExtResource("3_uesyp")
@@ -280,26 +279,18 @@ shape = SubResource("CapsuleShape2D_xllss")
 [node name="pizza" parent="." instance=ExtResource("9_ok8me")]
 position = Vector2(680, 158)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Panel" parent="CanvasLayer" instance=ExtResource("10_fyraa")]
+[node name="Panel" parent="." instance=ExtResource("10_fyraa")]
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 123.0
 offset_bottom = 40.0
 
-[node name="MoneyIndicator" parent="CanvasLayer" instance=ExtResource("11_mwji4")]
-offset_left = 1567.0
-offset_top = -10.0
-offset_right = 1567.0
-offset_bottom = -10.0
+[node name="Oven" parent="." instance=ExtResource("11_x00sv")]
+position = Vector2(729, 82)
+scale = Vector2(0.15, 0.15)
 
-[node name="Oven" parent="." instance=ExtResource("12_66d3p")]
-position = Vector2(733, 80)
-scale = Vector2(0.2, 0.2)
-
-[node name="Roller" parent="." instance=ExtResource("13_xwnmg")]
-position = Vector2(577, 156)
+[node name="Roller" parent="." instance=ExtResource("12_0imdo")]
+position = Vector2(600, 164)
 
 [connection signal="body_entered" from="transition_area2" to="transition_area2" method="_on_body_entered"]
 [connection signal="body_exited" from="transition_area2" to="transition_area2" method="_on_body_exited"]

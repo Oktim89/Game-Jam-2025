@@ -4,12 +4,11 @@ var time:float=0
 var seconds
 var minutes
 var can_cook:bool = true
-@export var time_mult:float= 0.3
+@export var time_mult:float= 0.2
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	progress_bar.max_value*=0.1
+	progress_bar.max_value*=time_mult
 	progress_bar.visible=false
-	print(progress_bar.max_value)
 	pass # Replace with function body.
 
 

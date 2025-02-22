@@ -30,7 +30,7 @@ func _ready() -> void:
 	last_position=global_position
 	#foward_dectection.add_exception_rid(RID(816043786241))
 	pick_random_order()
-	print(current_order)
+
 	
 	#foward_dectection.exclude_parent=true
 	
@@ -66,8 +66,7 @@ func _physics_process(delta: float) -> void:
 	if movement.length()==0:
 		anim.play("idle_right")
 	if Input.is_action_just_pressed("interact") and player_in_area and at_counter_area and Globals.final_order==current_order :
-		print("Thank you")
-		print(Globals.money)
+	
 		move_speed=60
 		customer_ordered= true
 		at_counter_area = false

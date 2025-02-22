@@ -5,6 +5,7 @@ func _ready() -> void:
 	Globals.connect("update_dough_pos", update_dough_pos)
 	Globals.connect("update_cheese_pizza_pos", update_cheese_pizza_pos)
 	Globals.connect("remove_item_in_hand", remove_item_in_hand)
+	Globals.connect("update_flat_pos", update_flat_pos)
 	
 	pass # Replace with function body.
 
@@ -39,4 +40,11 @@ func update_cheese_pizza_pos():
 		Globals.item_in_hands= true
 		Globals.final_order="Cheese Pizza"
 		Globals.current_item ="final_stage_pizza"
+	
+func update_flat_pos()->void:
+	if  Globals.item_in_hands==false:
+		var temp = scenes[2].instantiate()
+		add_child(temp)
+		Globals.item_in_hands= true
+		Globals.current_item ="flat_dough"
 	

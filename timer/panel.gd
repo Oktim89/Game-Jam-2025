@@ -16,7 +16,7 @@ func _process(delta) -> void:
 	if Globals.time > 0:
 		Globals.time-= delta
 	else:
-		Globals.Globals.time=0
+		#Globals.Globals.time=0
 		Globals.time =0
 	
 	seconds = fmod(Globals.time, 60)

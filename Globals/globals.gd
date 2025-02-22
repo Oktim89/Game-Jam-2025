@@ -11,7 +11,10 @@ var current_item:String
 var time = 300.0
 var served = 0
 var wave = 1
+signal update_flat_pos
 signal reached_quest_signal
 signal finished_quest_signal
 signal next_reached_quest_signal
 signal next_finished_quest_signal
+var in_flat_area:bool
+var is_dough_in_roller:bool

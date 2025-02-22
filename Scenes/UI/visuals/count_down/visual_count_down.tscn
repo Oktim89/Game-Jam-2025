@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtlud8im5kph7"]
+
+[ext_resource type="Texture2D" uid="uid://dl10vkcncqaub" path="res://Scenes/UI/Progress_textures/progress-bar-circle.png" id="1_gdt3s"]
+[ext_resource type="Texture2D" uid="uid://cy2a26pinqvxn" path="res://Scenes/UI/Progress_textures/progress-bar-frame.png" id="2_mta8v"]
+
+[node name="VisualCountDown" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+offset_left = -63.0
+offset_top = -65.0
+offset_right = 65.0
+offset_bottom = 63.0
+value = 33.0
+fill_mode = 4
+texture_under = ExtResource("1_gdt3s")
+texture_over = ExtResource("2_mta8v")
+texture_progress = ExtResource("1_gdt3s")
+tint_under = Color(0.0253638, 0.0253638, 0.0253638, 0.105882)
+tint_over = Color(0.784314, 0.780392, 0.756863, 1)
+tint_progress = Color(0, 0.697233, 0.217711, 1)

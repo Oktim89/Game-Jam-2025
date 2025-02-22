@@ -12,8 +12,13 @@ var stopper = true
 
 
 func _on_timer_timeout() -> void:
-	#if stopper:
+	if count>4 :
+		stopper=false
+	else:
 		var temp = scenes[0].instantiate()
 		add_child(temp)
+		count+=1
+		
+		
 		#stopper = false
 	#timer.wait_time = random.randi_range(5,10)

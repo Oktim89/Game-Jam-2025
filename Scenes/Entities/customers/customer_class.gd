@@ -17,12 +17,13 @@ var at_counter_area:bool = false
 @export var possible_pizzas: Array = [
 	{"name": "Cheese", "ingredients": ["dough", "sauce", "cheese", "bake"],
 	},
-	#{"name": "Pepperoni", "ingredients": ["dough", "sauce", "cheese", "pepperoni", "bake"]}
+	{"name": "Pepperoni", "ingredients": ["dough", "sauce", "cheese", "pepperoni", "bake"]}
 	
 ]
 #{"name": "pepperoni", "ingredients": ["dough", "sauce", "cheese", "pepperoni", "bake"]
 
 func _ready() -> void:
+	Globals.connect("update_money",update_money)
 	global_position= path_2D.global_position
 	last_position=global_position
 	#foward_dectection.add_exception_rid(RID(816043786241))
@@ -65,6 +66,7 @@ func _physics_process(delta: float) -> void:
 		anim.play("idle_right")
 	if Input.is_action_just_pressed("interact") and player_in_area and at_counter_area and Globals.final_order==current_order :
 		print("Thank you")
+		print(Globals.money)
 		move_speed=60
 		customer_ordered= true
 		at_counter_area = false
@@ -115,7 +117,8 @@ func counter_area():
 	if at_counter_area==true and customer_ordered==false:
 		move_speed=0
 
-		
+func update_money()->void:
+	Globals.money+=1
 			
 		
 func pick_random_order():

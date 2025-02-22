@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://lylqfb51ws5r"]
+
+[ext_resource type="Script" path="res://Scenes/Kitchen/roller/roller.gd" id="1_8irkq"]
+[ext_resource type="Texture2D" uid="uid://dyq665fw3cf2r" path="res://kitchen assets/Stove/Stove3.png" id="1_ekjm1"]
+[ext_resource type="PackedScene" uid="uid://dtlud8im5kph7" path="res://Scenes/UI/visuals/count_down/visual_count_down.tscn" id="2_a6gua"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cd1we"]
+radius = 91.5302
+
+[node name="Roller" type="Node2D"]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_8irkq")
+
+[node name="VisualCountDown" parent="." instance=ExtResource("2_a6gua")]
+
+[node name="TextureProgressBar" parent="VisualCountDown" index="0"]
+offset_left = 58.0
+offset_top = -120.0
+offset_right = 186.0
+offset_bottom = 8.0
+value = 0.0
+
+[node name="Rollersprite" type="Sprite2D" parent="."]
+scale = Vector2(4.9375, 3)
+texture = ExtResource("1_ekjm1")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="OvenArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OvenArea"]
+shape = SubResource("CircleShape2D_cd1we")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="OvenArea" to="." method="_on_oven_area_body_entered"]
+
+[editable path="VisualCountDown"]

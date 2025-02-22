@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://bkcrfbncseqgq"]
 
 [ext_resource type="Script" path="res://Scenes/Kitchen/bin/bin.gd" id="1_ihiv1"]
-[ext_resource type="Texture2D" uid="uid://c8u0458iitkp8" path="res://icon.svg" id="2_kfkhn"]
+[ext_resource type="Texture2D" uid="uid://kgvsd224f1s5" path="res://kitchen assets/Trash_can/Trash_can2.png" id="2_gmrke"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1uxhh"]
-radius = 75.1665
+radius = 52.0096
 
 [node name="Bin" type="Node2D" groups=["Bin"]]
 script = ExtResource("1_ihiv1")
@@ -12,12 +12,12 @@ script = ExtResource("1_ihiv1")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, 10)
 shape = SubResource("CircleShape2D_1uxhh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-3.8147e-06, 0.999998)
-scale = Vector2(0.742188, 0.757813)
-skew = -0.44855
-texture = ExtResource("2_kfkhn")
+position = Vector2(-1, -5)
+scale = Vector2(3, 3)
+texture = ExtResource("2_gmrke")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://diwu5o5fy1vbu"]
+
+[ext_resource type="Script" path="res://Scenes/UI/tutorial/quest.gd" id="1_b4rl5"]
+[ext_resource type="Script" path="res://Scenes/Kitchen/Door/door.gd" id="1_vrux4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cwx0a"]
+radius = 34.0588
+
+[node name="Door" type="Node2D" node_paths=PackedStringArray("quest")]
+script = ExtResource("1_vrux4")
+quest = NodePath("DoorArea/Quest")
+
+[node name="DoorArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea"]
+shape = SubResource("CircleShape2D_cwx0a")
+
+[node name="Quest" type="Node2D" parent="DoorArea"]
+script = ExtResource("1_b4rl5")
+quest_name = "First TIme"
+quest_desc = "Go to the Dough to collect it"
+reached_goal_text = "Put it into the roller(opposite the dough)"
+
+[connection signal="body_entered" from="DoorArea" to="." method="_on_door_area_body_entered"]

@@ -38,4 +38,5 @@ func update_cheese_pizza_pos():
 		add_child(temp)
 		Globals.item_in_hands= true
 		Globals.final_order="Cheese Pizza"
+		Globals.current_item ="final_stage_pizza"
 	

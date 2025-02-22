@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=4 uid="uid://clu8n42om36en"]
+[gd_scene load_steps=21 format=4 uid="uid://clu8n42om36en"]
 
 [ext_resource type="Texture2D" uid="uid://dai7pyqep1boa" path="res://Wall and Floor/TopDownHouse_FloorsAndWalls.png" id="1_2tlq3"]
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_5oh8q"]
 [ext_resource type="Texture2D" uid="uid://bcyhbr7ccexwr" path="res://kitchen assets/starting.png" id="1_vnqig"]
 [ext_resource type="PackedScene" uid="uid://b0ts5nqfbmnpd" path="res://Scenes/Entities/Player/player.tscn" id="2_lchm3"]
 [ext_resource type="Script" path="res://scripts/transition_area.gd" id="3_uesyp"]
@@ -11,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dxxt112pcxhot" path="res://timer/panel.tscn" id="10_fyraa"]
 [ext_resource type="PackedScene" uid="uid://btd3dhy24ke7k" path="res://Scenes/Kitchen/oven/oven.tscn" id="11_x00sv"]
 [ext_resource type="PackedScene" uid="uid://lylqfb51ws5r" path="res://Scenes/Kitchen/roller/roller.tscn" id="12_0imdo"]
+[ext_resource type="PackedScene" uid="uid://diwu5o5fy1vbu" path="res://Scenes/Kitchen/Door/door.tscn" id="12_gnebj"]
+[ext_resource type="PackedScene" uid="uid://blgkfhbkfq2a7" path="res://Scenes/UI/tutorial/next.tscn" id="14_cvbix"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rid0n"]
 texture = ExtResource("1_2tlq3")
@@ -222,9 +225,10 @@ size = Vector2(0, 148.113)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xllss"]
 radius = 14.0
-height = 184.0
+height = 138.0
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_5oh8q")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 position = Vector2(0, 48)
@@ -232,13 +236,13 @@ tile_map_data = PackedByteArray("AAAAAP3/CgABAAAAAAAAAP7/CgABAAEAAAAAAP//CgABAAI
 tile_set = SubResource("TileSet_4hf5d")
 
 [node name="Doughflatter" parent="." instance=ExtResource("3_wm5b8")]
-position = Vector2(618, 84)
+position = Vector2(684, 153)
 
 [node name="DoughProducer" parent="." instance=ExtResource("5_6ykmx")]
-position = Vector2(575, 80)
+position = Vector2(588, 80)
 
 [node name="Player" parent="." instance=ExtResource("2_lchm3")]
-position = Vector2(412, 153)
+position = Vector2(209, 125)
 
 [node name="Customer Camera" type="Camera2D" parent="." groups=["Cameras"]]
 anchor_mode = 0
@@ -288,5 +292,13 @@ scale = Vector2(0.15, 0.15)
 [node name="Roller" parent="." instance=ExtResource("12_0imdo")]
 position = Vector2(600, 164)
 
+[node name="Door" parent="." instance=ExtResource("12_gnebj")]
+position = Vector2(462, 79)
+
+[node name="Next" parent="." instance=ExtResource("14_cvbix")]
+position = Vector2(729, 139)
+
 [connection signal="body_entered" from="transition_area2" to="transition_area2" method="_on_body_entered"]
 [connection signal="body_exited" from="transition_area2" to="transition_area2" method="_on_body_exited"]
+
+[editable path="Door"]

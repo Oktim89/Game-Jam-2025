@@ -4,12 +4,12 @@ var time:float=0
 var seconds
 var minutes
 var can_cook:bool = true
+var can_quest = true
 @export var time_mult:float= 0.3
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	progress_bar.max_value*=0.1
 	progress_bar.visible=false
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -47,3 +47,7 @@ func _on_oven_area_body_entered(body: Node2D) -> void:
 		Globals.emit_signal("remove_item_in_hand")
 		Globals.item_in_hands=false
 		_on_timer_timeout()
+		
+	if body.is_in_group("Player") and can_quest :
+		Globals.emit_signal("finished_quest_signal")
+		can_quest=false

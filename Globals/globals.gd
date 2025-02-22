@@ -11,3 +11,7 @@ var current_item:String
 var time = 300.0
 var served = 0
 var wave = 1
+signal reached_quest_signal
+signal finished_quest_signal
+signal next_reached_quest_signal
+signal next_finished_quest_signal

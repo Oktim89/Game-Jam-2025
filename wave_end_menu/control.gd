@@ -1,6 +1,6 @@
 extends Control
 
-var shop
+var shop = "res://Scenes/UI/Shop/shop.tscn"
 var main = "res://Scenes/main.tscn"
 var label
 var label2
@@ -25,5 +25,4 @@ func _on_button_pressed():
 		Globals.wave +=1
 
 func _on_button_2_pressed():
-	pass
-	#get_tree().change_scene_to_file(scene)
+	get_tree().change_scene_to_file(shop)

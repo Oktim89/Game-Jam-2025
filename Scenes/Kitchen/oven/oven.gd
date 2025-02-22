@@ -37,10 +37,12 @@ func progress_reset()->void:
 		progress_bar.visible=false
 		can_cook=true
 		
+		
 
 
 func _on_oven_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player") and progress_bar.value==0 and can_cook:
+	if body.is_in_group("Player") and progress_bar.value==0 and can_cook and Globals.current_item=="final_stage_pizza":
 		progress_bar.visible =true
 		can_cook=false
+		Globals.emit_signal("remove_item_in_hand")
 		_on_timer_timeout()

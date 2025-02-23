@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b0ts5nqfbmnpd"]
+[gd_scene load_steps=44 format=3 uid="uid://b0ts5nqfbmnpd"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_juq15"]
 [ext_resource type="Texture2D" uid="uid://b3e751udc2snr" path="res://16x16/Char_005_Idle.png" id="1_ttb80"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" path="res://Scenes/Entities/Player/marker_2d.gd" id="4_fgwg6"]
 [ext_resource type="PackedScene" uid="uid://b18a76b2lkwol" path="res://Globals/global_dough.tscn" id="5_jjm8e"]
 [ext_resource type="PackedScene" uid="uid://cf2gnhsc3cu04" path="res://Scenes/Kitchen/dough/cheese_pizza.tscn" id="6_6omf6"]
+[ext_resource type="PackedScene" uid="uid://dqhn3j0q37eeu" path="res://Scenes/Kitchen/dough/flat_dough.tscn" id="7_4sd0n"]
+[ext_resource type="PackedScene" uid="uid://d4b100dvnnwj4" path="res://Scenes/Kitchen/sauce/sauce.tscn" id="8_3cu0h"]
+[ext_resource type="PackedScene" uid="uid://m40m03svebkv" path="res://Scenes/Kitchen/pep/pep.tscn" id="9_e04u5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5a45"]
 atlas = ExtResource("1_ttb80")
@@ -293,4 +296,4 @@ shape = SubResource("CapsuleShape2D_y3u7n")
 [node name="Down" type="Marker2D" parent="."]
 position = Vector2(0, -23)
 script = ExtResource("4_fgwg6")
-scenes = Array[PackedScene]([ExtResource("5_jjm8e"), ExtResource("6_6omf6")])
+scenes = Array[PackedScene]([ExtResource("5_jjm8e"), ExtResource("6_6omf6"), ExtResource("7_4sd0n"), ExtResource("8_3cu0h"), ExtResource("9_e04u5")])

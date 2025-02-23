@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://m40m03svebkv"]
+
+[ext_resource type="Script" path="res://Scenes/Kitchen/pep/pep.gd" id="1_ers43"]
+[ext_resource type="Texture2D" uid="uid://b3d8tirhnql4" path="res://16x16/pepperoni.png" id="1_q36xc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3h271"]
+radius = 23.0868
+
+[node name="Pep" type="Node2D"]
+script = ExtResource("1_ers43")
+
+[node name="PepArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PepArea"]
+shape = SubResource("CircleShape2D_3h271")
+
+[node name="Sprite2D" type="Sprite2D" parent="PepArea"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_q36xc")
+
+[connection signal="body_entered" from="PepArea" to="." method="_on_pep_area_body_entered"]
+[connection signal="body_exited" from="PepArea" to="." method="_on_pep_area_body_exited"]

@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://qnbs3xj3jvdh"]
 
-[ext_resource type="Texture2D" uid="uid://b3a5nxmmvasw7" path="res://topping/Idle.png" id="1_j8okf"]
+[ext_resource type="Texture2D" uid="uid://bpt44ibfkrn38" path="res://topping/ingredience/pepperoni.png" id="1_ofyqx"]
 
 [node name="pepperoni" type="Sprite2D"]
-texture = ExtResource("1_j8okf")
+scale = Vector2(6, 6)
+texture = ExtResource("1_ofyqx")

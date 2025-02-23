@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Kitchen/bin/bin.gd" id="1_ihiv1"]
 [ext_resource type="Texture2D" uid="uid://kgvsd224f1s5" path="res://kitchen assets/Trash_can/Trash_can2.png" id="2_gmrke"]
 
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_1uxhh"]
 radius = 52.0096
 

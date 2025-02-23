@@ -8,7 +8,6 @@ var can_quest= true
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player")  and Globals.item_in_hands==false:
-		print("Picked up dough")
 		Globals.emit_signal("update_dough_pos")
 		
 		

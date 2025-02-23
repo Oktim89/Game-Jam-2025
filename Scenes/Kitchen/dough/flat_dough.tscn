@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqhn3j0q37eeu"]
+
+[ext_resource type="Texture2D" uid="uid://dnj5plyx8c15t" path="res://16x16/flat_dough.png" id="1_mohgh"]
+
+[node name="FlatDough" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 2.607)
+texture = ExtResource("1_mohgh")

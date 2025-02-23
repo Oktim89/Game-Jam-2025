@@ -8,13 +8,11 @@ extends CharacterBody2D
 
 const current_speed : float = 175.0
 #var is_moving : bool = false
-var dir : String = "none"
 var last_direction:Vector2
 
 
-
 	
-func _process(delta):
+func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("sprint"): #make sprinting mechanic
 		speed = sprint_speed
 	else:
@@ -42,6 +40,9 @@ func _process(delta):
 		
 	move_and_slide() # ensure it moves actually 
 	
+func _process(_delta):
+
+		
 	if velocity == Vector2.ZERO and last_direction:
 		if last_direction== Vector2.UP: #which is down
 			anim.play("idle_back")

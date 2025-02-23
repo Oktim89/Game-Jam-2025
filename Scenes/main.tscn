@@ -290,7 +290,7 @@ position = Vector2(729, 82)
 scale = Vector2(0.15, 0.15)
 
 [node name="Roller" parent="." instance=ExtResource("12_0imdo")]
-position = Vector2(600, 164)
+position = Vector2(600, 159)
 
 [node name="Door" parent="." instance=ExtResource("12_gnebj")]
 position = Vector2(462, 79)

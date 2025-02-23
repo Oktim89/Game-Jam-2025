@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cscvw22l6bnux"]
+
+[ext_resource type="Texture2D" uid="uid://dsqigw54tvt32" path="res://topping/ingredience/Cheese.png" id="1_46vqi"]
+
+[node name="Cheese" type="Sprite2D"]
+scale = Vector2(5, 5)
+texture = ExtResource("1_46vqi")

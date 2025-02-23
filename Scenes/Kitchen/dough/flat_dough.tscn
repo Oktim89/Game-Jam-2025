@@ -5,6 +5,5 @@
 [node name="FlatDough" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(141, 121.5)
-scale = Vector2(18.625, 16.1875)
+scale = Vector2(3, 2.607)
 texture = ExtResource("1_mohgh")

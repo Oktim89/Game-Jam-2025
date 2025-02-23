@@ -33,5 +33,6 @@ shape = SubResource("CircleShape2D_jh6bo")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="OvenArea" to="." method="_on_oven_area_body_entered"]
+[connection signal="body_exited" from="OvenArea" to="." method="_on_oven_area_body_exited"]
 
 [editable path="Oven/VisualCountDown"]

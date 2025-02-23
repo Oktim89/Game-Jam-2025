@@ -17,7 +17,7 @@ var at_counter_area:bool = false
 @export var possible_pizzas: Array = [
 	{"name": "Cheese", "ingredients": ["dough", "sauce", "cheese", "bake"],
 	},
-	{"name": "Pepperoni", "ingredients": ["dough", "sauce", "cheese", "pepperoni", "bake"]}
+	{"name": "Pep", "ingredients": ["dough", "sauce", "cheese", "pepperoni", "bake"]}
 	
 	#{"name": "Pepperoni", "ingredients": ["dough", "sauce", "cheese", "pepperoni", "bake"]}
 ]
@@ -30,6 +30,7 @@ func _ready() -> void:
 	last_position=global_position
 	#foward_dectection.add_exception_rid(RID(816043786241))
 	pick_random_order()
+	print(current_order)
 
 	
 	#foward_dectection.exclude_parent=true
@@ -66,12 +67,14 @@ func _physics_process(delta: float) -> void:
 	if movement.length()==0:
 		anim.play("idle_right")
 	if Input.is_action_just_pressed("interact") and player_in_area and at_counter_area and Globals.final_order==current_order :
-	
+		print("Its me")
+		Globals.emit_signal("remove_item_in_hand")
 		move_speed=60
 		customer_ordered= true
 		at_counter_area = false
 		Globals.order_success=true
 		Globals.served +=1
+		
 		#print(foward_dectection.get_collider())
 	
 	#if Input.is_action_just_pressed("ui_accept") and correct_order =="Cheese Pizza":

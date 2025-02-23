@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bjj458pnulqu5"]
 
-[ext_resource type="Texture2D" uid="uid://b3a5nxmmvasw7" path="res://topping/Idle.png" id="1_owl4w"]
+[ext_resource type="Texture2D" uid="uid://b37yco1qqaw3n" path="res://topping/ingredience/mushroom.png" id="1_yk4ej"]
 
 [node name="mushrooms" type="Sprite2D"]
-texture = ExtResource("1_owl4w")
+scale = Vector2(2, 2)
+texture = ExtResource("1_yk4ej")

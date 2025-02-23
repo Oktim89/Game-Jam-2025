@@ -1,16 +1,20 @@
-[gd_scene load_steps=19 format=4 uid="uid://clu8n42om36en"]
+[gd_scene load_steps=22 format=4 uid="uid://clu8n42om36en"]
 
 [ext_resource type="Texture2D" uid="uid://dai7pyqep1boa" path="res://Wall and Floor/TopDownHouse_FloorsAndWalls.png" id="1_2tlq3"]
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_5oh8q"]
 [ext_resource type="Texture2D" uid="uid://bcyhbr7ccexwr" path="res://kitchen assets/starting.png" id="1_vnqig"]
 [ext_resource type="PackedScene" uid="uid://b0ts5nqfbmnpd" path="res://Scenes/Entities/Player/player.tscn" id="2_lchm3"]
 [ext_resource type="Script" path="res://scripts/transition_area.gd" id="3_uesyp"]
+[ext_resource type="PackedScene" uid="uid://cf2gnhsc3cu04" path="res://Scenes/Kitchen/dough/cheese_pizza.tscn" id="3_wm5b8"]
 [ext_resource type="PackedScene" uid="uid://da3lcf382gsws" path="res://Scenes/Kitchen/dough/dough_producer.tscn" id="5_6ykmx"]
+[ext_resource type="PackedScene" uid="uid://csvxqjn5c6tnf" path="res://Scenes/Paths/customer_path.tscn" id="8_vptyi"]
 [ext_resource type="PackedScene" uid="uid://bkcrfbncseqgq" path="res://Scenes/Kitchen/bin/bin.tscn" id="9_alxfg"]
 [ext_resource type="PackedScene" uid="uid://dxxt112pcxhot" path="res://timer/panel.tscn" id="10_fyraa"]
-[ext_resource type="PackedScene" uid="uid://btd3dhy24ke7k" path="res://Scenes/Kitchen/oven/oven.tscn" id="11_x00sv"]
+[ext_resource type="PackedScene" uid="uid://d4b100dvnnwj4" path="res://Scenes/Kitchen/sauce/sauce.tscn" id="11_30n2l"]
 [ext_resource type="PackedScene" uid="uid://lylqfb51ws5r" path="res://Scenes/Kitchen/roller/roller.tscn" id="12_0imdo"]
 [ext_resource type="PackedScene" uid="uid://diwu5o5fy1vbu" path="res://Scenes/Kitchen/Door/door.tscn" id="12_gnebj"]
+[ext_resource type="PackedScene" uid="uid://m40m03svebkv" path="res://Scenes/Kitchen/pep/pep.tscn" id="14_jptfu"]
+[ext_resource type="PackedScene" uid="uid://vrkgy5r6wm7c" path="res://Scenes/UI/visuals/money/money_indicator.tscn" id="17_kybej"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rid0n"]
 texture = ExtResource("1_2tlq3")
@@ -224,9 +228,6 @@ size = Vector2(0, 148.113)
 radius = 14.0
 height = 138.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jiii"]
-size = Vector2(85, 143)
-
 [node name="Main" type="Node2D"]
 script = ExtResource("1_5oh8q")
 
@@ -239,6 +240,7 @@ tile_set = SubResource("TileSet_4hf5d")
 position = Vector2(588, 80)
 
 [node name="Player" parent="." instance=ExtResource("2_lchm3")]
+unique_name_in_owner = true
 position = Vector2(209, 125)
 
 [node name="Customer Camera" type="Camera2D" parent="." groups=["Cameras"]]
@@ -279,25 +281,35 @@ offset_top = 0.0
 offset_right = 123.0
 offset_bottom = 40.0
 
-[node name="Oven" parent="." instance=ExtResource("11_x00sv")]
-position = Vector2(729, 82)
-scale = Vector2(0.15, 0.15)
-
 [node name="Roller" parent="." instance=ExtResource("12_0imdo")]
 position = Vector2(600, 164)
+
+[node name="Sauce" parent="." instance=ExtResource("11_30n2l")]
+position = Vector2(950, 128)
 
 [node name="Door" parent="." instance=ExtResource("12_gnebj")]
 position = Vector2(462, 79)
 
-[node name="Topping_transition" type="Area2D" parent="."]
-position = Vector2(932, 160)
+[node name="Pep" parent="." instance=ExtResource("14_jptfu")]
+position = Vector2(852, 233)
+rotation = -1.5708
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Topping_transition"]
-position = Vector2(29.5, 1.5)
-shape = SubResource("RectangleShape2D_7jiii")
+[node name="CheesePizza" parent="." instance=ExtResource("3_wm5b8")]
+position = Vector2(946, 195)
+rotation = -1.5708
+
+[node name="CustomerPath" parent="." instance=ExtResource("8_vptyi")]
+position = Vector2(3, 172)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(0.4, 0.4)
+transform = Transform2D(0.4, 0, 0, 0.4, 0, 0)
+
+[node name="MoneyIndicator" parent="CanvasLayer" instance=ExtResource("17_kybej")]
+offset_top = 580.0
+offset_bottom = 580.0
 
 [connection signal="body_entered" from="transition_area2" to="transition_area2" method="_on_body_entered"]
 [connection signal="body_exited" from="transition_area2" to="transition_area2" method="_on_body_exited"]
-[connection signal="body_entered" from="Topping_transition" to="." method="_on_topping_transition_body_entered"]
 
 [editable path="Door"]

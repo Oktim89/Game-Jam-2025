@@ -23,7 +23,6 @@ GlobalQuest="*res://Scenes/UI/tutorial/GlobalQuest.tscn"
 
 [display]
 
-window/size/resizable=false
 window/size/extend_to_title=true
 window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"

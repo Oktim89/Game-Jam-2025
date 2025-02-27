@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dtlud8im5kph7" path="res://Scenes/UI/visuals/count_down/visual_count_down.tscn" id="2_a6gua"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cd1we"]
-radius = 123.333
+radius = 71.9568
 
 [node name="Roller" type="Node2D"]
 scale = Vector2(0.3, 0.3)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bujdal8uxr3co"]
+
+[ext_resource type="Script" path="res://Scenes/Kitchen/ToppingsSection/toppings_transition.gd" id="1_3ks2d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jiii"]
+size = Vector2(85, 143)
+
+[node name="Toppingstransition" type="Node2D"]
+script = ExtResource("1_3ks2d")
+
+[node name="Topping_transitionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Topping_transitionArea"]
+shape = SubResource("RectangleShape2D_7jiii")
+
+[connection signal="body_entered" from="Topping_transitionArea" to="." method="_on_topping_transition_body_entered"]

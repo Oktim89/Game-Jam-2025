@@ -76,7 +76,6 @@ func _on_oven_area_body_entered(body: Node2D) -> void:
 			progress_bar.value+=1
 			print("Pep and item_in_oven: ",item_in_oven)
 			_on_timer_timeout()
-	Globals.emit_signal("update_oven")
 	take_out_flat()
 	
 

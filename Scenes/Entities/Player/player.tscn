@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scenes/Entities/Player/marker_2d.gd" id="4_fgwg6"]
 [ext_resource type="PackedScene" uid="uid://b18a76b2lkwol" path="res://Globals/global_dough.tscn" id="5_jjm8e"]
 [ext_resource type="PackedScene" uid="uid://cf2gnhsc3cu04" path="res://Scenes/Kitchen/dough/cheese_pizza.tscn" id="6_6omf6"]
-[ext_resource type="PackedScene" uid="uid://dqhn3j0q37eeu" path="res://Scenes/Kitchen/dough/flat_dough.tscn" id="7_4sd0n"]
+[ext_resource type="PackedScene" uid="uid://bs8mtb2jvh11v" path="res://Scenes/Kitchen/dough/flat_dough.tscn" id="7_4sd0n"]
 [ext_resource type="PackedScene" uid="uid://d4b100dvnnwj4" path="res://Scenes/Kitchen/sauce/sauce.tscn" id="8_3cu0h"]
 [ext_resource type="PackedScene" uid="uid://m40m03svebkv" path="res://Scenes/Kitchen/pep/pep.tscn" id="9_e04u5"]
 

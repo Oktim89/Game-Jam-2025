@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://clu8n42om36en"]
+[gd_scene load_steps=23 format=4 uid="uid://clu8n42om36en"]
 
 [ext_resource type="Texture2D" uid="uid://dai7pyqep1boa" path="res://Wall and Floor/TopDownHouse_FloorsAndWalls.png" id="1_2tlq3"]
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_5oh8q"]
@@ -12,8 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://dxxt112pcxhot" path="res://timer/panel.tscn" id="10_fyraa"]
 [ext_resource type="PackedScene" uid="uid://d4b100dvnnwj4" path="res://Scenes/Kitchen/sauce/sauce.tscn" id="11_30n2l"]
 [ext_resource type="PackedScene" uid="uid://lylqfb51ws5r" path="res://Scenes/Kitchen/roller/roller.tscn" id="12_0imdo"]
-[ext_resource type="PackedScene" uid="uid://diwu5o5fy1vbu" path="res://Scenes/Kitchen/Door/door.tscn" id="12_gnebj"]
 [ext_resource type="PackedScene" uid="uid://m40m03svebkv" path="res://Scenes/Kitchen/pep/pep.tscn" id="14_jptfu"]
+[ext_resource type="PackedScene" uid="uid://btd3dhy24ke7k" path="res://Scenes/Kitchen/oven/oven.tscn" id="15_sd3xd"]
+[ext_resource type="PackedScene" uid="uid://bujdal8uxr3co" path="res://Scenes/Kitchen/ToppingsSection/toppings_transition.tscn" id="16_gb1ve"]
 [ext_resource type="PackedScene" uid="uid://vrkgy5r6wm7c" path="res://Scenes/UI/visuals/money/money_indicator.tscn" id="17_kybej"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rid0n"]
@@ -241,7 +242,7 @@ position = Vector2(588, 80)
 
 [node name="Player" parent="." instance=ExtResource("2_lchm3")]
 unique_name_in_owner = true
-position = Vector2(209, 125)
+position = Vector2(448, 146)
 
 [node name="Customer Camera" type="Camera2D" parent="." groups=["Cameras"]]
 anchor_mode = 0
@@ -266,7 +267,7 @@ scale = Vector2(1.06, 1.06)
 shape = SubResource("RectangleShape2D_3etly")
 
 [node name="Bin" parent="." instance=ExtResource("9_alxfg")]
-position = Vector2(872, 78)
+position = Vector2(872, 71)
 scale = Vector2(0.5, 0.5)
 
 [node name="Counter" type="StaticBody2D" parent="." groups=["Counter"]]
@@ -285,16 +286,16 @@ offset_bottom = 40.0
 position = Vector2(600, 159)
 
 [node name="Sauce" parent="." instance=ExtResource("11_30n2l")]
+visible = false
 position = Vector2(950, 128)
 
-[node name="Door" parent="." instance=ExtResource("12_gnebj")]
-position = Vector2(462, 79)
-
 [node name="Pep" parent="." instance=ExtResource("14_jptfu")]
+visible = false
 position = Vector2(852, 233)
 rotation = -1.5708
 
 [node name="CheesePizza" parent="." instance=ExtResource("3_wm5b8")]
+visible = false
 position = Vector2(946, 195)
 rotation = -1.5708
 
@@ -309,7 +310,12 @@ transform = Transform2D(0.4, 0, 0, 0.4, 0, 0)
 offset_top = 580.0
 offset_bottom = 580.0
 
+[node name="Oven" parent="." instance=ExtResource("15_sd3xd")]
+position = Vector2(728, 82)
+scale = Vector2(0.1, 0.1)
+
+[node name="Toppingstransition" parent="." instance=ExtResource("16_gb1ve")]
+position = Vector2(964, 159)
+
 [connection signal="body_entered" from="transition_area2" to="transition_area2" method="_on_body_entered"]
 [connection signal="body_exited" from="transition_area2" to="transition_area2" method="_on_body_exited"]
-
-[editable path="Door"]

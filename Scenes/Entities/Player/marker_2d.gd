@@ -8,10 +8,7 @@ func _ready() -> void:
 	Globals.connect("update_flat_pos", update_flat_pos)
 	Globals.connect("update_sauce_pos",update_sauce_pos)
 	Globals.connect("update_pep_pos", update_pep_pos)
-	Globals.connect("update_oven",update_oven)
 	
-	
-	pass # Replace with function body.
 
 
 
@@ -20,7 +17,7 @@ func _process(delta: float) -> void:
 		Globals.money+=1
 		remove_item_in_hand()
 		Globals.order_success=false
-		emit_signal("hidden")
+		#emit_signal("hidden")
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
@@ -58,7 +55,8 @@ func update_flat_pos()->void:
 		Globals.current_item ="flat_dough"
 		
 func update_sauce_pos():
-	if  Globals.item_in_hands==false:
+	if   Globals.current_item=="flat_dough":
+		remove_item_in_hand()
 		var temp = scenes[3].instantiate()
 		add_child(temp)
 		Globals.item_in_hands= true
@@ -72,9 +70,13 @@ func update_pep_pos():
 		Globals.item_in_hands= true
 		Globals.current_item ="Pep Pizza"
 		Globals.final_order="Pep Pizza"
-func update_oven():
-	if Globals.current_item =="Pep Pizza" or Globals.current_item =="Cheese Pizza":
-		remove_item_in_hand()
+	if  Globals.used_oven==true:
+		var temp = scenes[4].instantiate()
+		add_child(temp)
+		Globals.item_in_hands= true
+		Globals.current_item ="Pep Pizza"
+		Globals.final_order="Pep Pizza"
+		
 		
 		
 	

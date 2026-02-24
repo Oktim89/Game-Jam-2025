@@ -39,7 +39,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	counter_area()
+	#counter_area()
 	
 	#foward_detection.force_raycast_update()  # Ensure it detects every frame
 	

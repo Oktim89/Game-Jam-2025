@@ -1,7 +1,7 @@
 extends Node2D
 class_name Dough
 @onready var dough =$Area2D/Sprite2D
-@export var quest:Quest
+
 var can_quest= true
 
 # Called when the node enters the scene tree for the first time.

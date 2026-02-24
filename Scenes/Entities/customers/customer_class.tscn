@@ -1,9 +1,8 @@
-[gd_scene load_steps=41 format=3 uid="uid://3vpgeykfxna2"]
+[gd_scene format=3 uid="uid://3vpgeykfxna2"]
 
-[ext_resource type="Script" path="res://Scenes/Entities/customers/customer_class.gd" id="1_je7ha"]
+[ext_resource type="Script" uid="uid://chsf8wj370ubg" path="res://Scenes/Entities/customers/customer_class.gd" id="1_je7ha"]
 [ext_resource type="Texture2D" uid="uid://ms5qwogsswlx" path="res://16x16/Char_001_Idle.png" id="1_mtvwx"]
 [ext_resource type="Texture2D" uid="uid://cdnov1y538mox" path="res://16x16/Char_001.png" id="2_thggq"]
-[ext_resource type="PackedScene" uid="uid://c5cy6k3wnnyri" path="res://Scenes/test/ray_cast_2d.tscn" id="4_w7jg1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lqd5c"]
 radius = 7.0
@@ -282,34 +281,36 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_6g5nb"]
 radius = 36.5034
 
-[node name="Customer" type="CharacterBody2D" groups=["Customers"]]
+[node name="Customer" type="CharacterBody2D" unique_id=453085232 groups=["Customers"]]
 scale = Vector2(2, 2)
 collision_layer = 3
 script = ExtResource("1_je7ha")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=501900703]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_lqd5c")
 
-[node name="CounterDectection" type="Area2D" parent="."]
+[node name="CounterDectection" type="Area2D" parent="." unique_id=1803428784]
 collision_layer = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CounterDectection"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CounterDectection" unique_id=1981098607]
 shape = SubResource("CircleShape2D_24tsf")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1247546719]
 sprite_frames = SubResource("SpriteFrames_2i2be")
 animation = &"walk_left"
 
-[node name="Order_detect" type="Area2D" parent="."]
+[node name="Order_detect" type="Area2D" parent="." unique_id=1223402546]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Order_detect"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Order_detect" unique_id=981319699]
 shape = SubResource("CircleShape2D_6g5nb")
 debug_color = Color(0.989449, 0, 0.290316, 0.42)
 
-[node name="RayCast2D" parent="." instance=ExtResource("4_w7jg1")]
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=136347767]
+scale = Vector2(0.5, 0.5)
+target_position = Vector2(71, 0)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=687716987]
 position = Vector2(-0.5, 2)
 scale = Vector2(0.9, 1.2)
 

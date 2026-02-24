@@ -8,19 +8,21 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Pizza Pressure (Game Jam 2025)"
 run/main_scene="res://Scenes/UI/menu/new_menu/menu.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Globals="*res://Globals/globals.gd"
-SaveGame="*res://saved_game/save_game.gd"
 DampedOscillator="*res://addons/DampedOscillator/scripts/damped_oscillator.tscn"
-GlobalQuest="res://Scenes/UI/tutorial/GlobalQuest.tscn"
 
 [display]
 
